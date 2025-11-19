@@ -302,74 +302,59 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
 });
 
 app.get('/sitemap.xml', async (req, res) => {
+  const BASE_URL = "https://cassamedicalbali.com" || "https://cassamedicalbali.vercel.app";
+
   try {
-    const baseUrl = 'https://cassamedicalbali.vercel.app';
+    const articles = await article.find().sort({ createdAt: -1 });
 
-    // Ambil semua artikel
-    const articles = await article.find().sort({ _id: -1 }).lean();
-
-    // Daftar route statis
-    const staticRoutes = [
-      '',
-      'home',
-      'service',
-      'about-us',
-      'contact',
-      'article',
-      'login',
-      'dengue-package',
-      'flu-package',
-      'hangover-package',
-      'immune-package',
-      'jetlag-package',
-      'belly-package',
-      'doctor-consultation',
-      'call-service',
-      'laboratory-testing',
-      'std-testing',
-      'wound-treatment'
+    let staticUrls = [
+      "",
+      "home",
+      "service",
+      "about-us",
+      "contact",
+      "article",
+      "dengue-package",
+      "flu-package",
+      "hangover-package",
+      "immune-package",
+      "jetlag-package",
+      "belly-package",
+      "doctor-consultation",
+      "call-service",
+      "laboratory-testing",
+      "std-testing",
+      "wound-treatment"
     ];
 
-    // Mulai XML
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+    const staticUrlEntries = staticUrls.map(url => `
+      <url>
+        <loc>${BASE_URL}/${url}</loc>
+        <changefreq>monthly</changefreq>
+      </url>
+    `).join("");
 
-    // Static routes
-    staticRoutes.forEach(route => {
-      const loc = route === '' ? `${baseUrl}/` : `${baseUrl}/${route}`;
-      xml += `
-  <url>
-    <loc>${loc}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
-    });
+    const articleEntries = articles.map(a => `
+      <url>
+        <loc>${BASE_URL}/detail-article/${a._id}</loc>
+        <lastmod>${new Date(a.updatedAt).toISOString()}</lastmod>
+        <changefreq>weekly</changefreq>
+      </url>
+    `).join("");
 
-    // Dynamic article routes
-    for (const a of articles) {
-      const lastmod = a.updatedAt
-        ? new Date(a.updatedAt).toISOString()
-        : new Date().toISOString();
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      ${staticUrlEntries}
+      ${articleEntries}
+    </urlset>`;
 
-      xml += `
-  <url>
-    <loc>${baseUrl}/detail-article/${a._id}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>`;
-    }
-
-    xml += `\n</urlset>`;
-
-    res.header('Content-Type', 'application/xml');
-    return res.send(xml);
-
-  } catch (error) {
-    console.error("Sitemap Error:", error);
-    return res.status(500).send("Sitemap generation error.");
+    res.set("Content-Type", "application/xml");
+    res.send(sitemap);
+  } catch (err) {
+    res.status(500).send("Error generating sitemap");
   }
 });
+
 
 const PORT = 5000;
 app.listen(PORT, () => {
