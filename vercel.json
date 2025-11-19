@@ -13,14 +13,14 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/index.js"
+      "source": "/api/:path*",
+      "destination": "/backend/index.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "dist/cassamedicalclinic/index.html"
+      "source": "/:path*",
+      "destination": "/dist/cassamedicalclinic/index.html"
     }
   ]
 }
