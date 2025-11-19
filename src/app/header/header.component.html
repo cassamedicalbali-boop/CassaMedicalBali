@@ -1,0 +1,75 @@
+<!-- TOP BAR -->
+<div id="header" class="topbar d-flex px-3" *ngIf="website">
+  <div class="container d-flex justify-content-end p-1">
+      <a [href]="website.instagramLink1" target="_blank" class="me-3 header-link">
+        <i class="fa-brands fa-instagram fa-lg"></i> {{ website.instagramName1 }}
+      </a>
+      <a [href]="website.instagramLink2" target="_blank" class="me-3 header-link">
+        <i class="fa-brands fa-instagram fa-lg"></i> {{ website.instagramName2 }}
+      </a>
+  </div>
+</div>
+
+<nav id="header" class="navbar navbar-expand-lg sticky-top header-navbar shadow shadow-sm" data-bs-spy="scroll" data-bs-target="#navbarOffcanvasLg" *ngIf="website">
+    <div class="container">
+    <a class="navbar-brand" routerLink="/" (click)="closeOffcanvas()">
+      <img [src]="website.imageUrl || '../../assets/images/logo2.png'" alt="CassaMedicalClinic-Logo" class="navbar-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-start header-offcanvas" tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <div class="offcanvas-header">
+        <img [src]="website.imageUrl || '../../assets/images/logo2.png'" alt="CassaMedicalClinic-Logo" class="navbar-logo-offcanvas">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column h-100">
+        <div class="menu-wrapper flex-grow-1">
+          <div class="d-flex flex-row">
+            <a [href]="website.instagramLink1" target="_blank" class="me-3 header-social">
+              <i class="fa-brands fa-square-instagram fa-xl"></i> {{ website.instagramName1 }}
+            </a>
+            <a [href]="website.instagramLink2" target="_blank" class="me-3 header-social">
+              <i class="fa-brands fa-square-instagram fa-xl"></i> {{ website.instagramName2 }}
+            </a>
+          </div>
+          <hr class="divider-offcanvas">
+          <ul class="navbar-nav justify-content-center pe-4">
+            <li class="nav-item mx-2"><a class="nav-link" routerLink="/" (click)="closeOffcanvas()">Home</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" routerLink="about-us" (click)="closeOffcanvas()">About Us</a></li>
+            <li class="nav-item mx-2 dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">IV Therapies</a>
+                <ul class="dropdown-menu navbar-dropdown">
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="belly-package" style="color: #2A73B9;">IV Bali Belly Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="hangover-package">IV Hangover Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="immune-package">IV Immune Booster</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="jetlag-package">IV Jet Lag Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="dengue-package">IV Dengue Blood Test</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="flu-package">IV Flu Package</a></li>
+                </ul>
+            </li>
+            <li class="nav-item mx-2 dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                <ul class="dropdown-menu navbar-dropdown">
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="doctor-consultation">Doctor Consultation</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="call-service">On Call Service</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="wound-treatment">Wound Treatment</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="laboratory-testing">Laboratory Testing</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="std-testing">STD Testing</a></li>
+                </ul>
+            </li>
+            <li class="nav-item mx-2"><a class="nav-link" routerLink="article" (click)="closeOffcanvas()">Articles</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" routerLink="contact" (click)="closeOffcanvas()">Contact Us</a></li>
+            <li class="nav-item divider-vertical mx-2"></li>
+            <hr class="divider-offcanvas">
+            <li class="nav-item mx-2 pt-2">
+                <a [href]="'https://wa.me/' + website.whatsappNumber" target="_blank">
+                  <i class="fa-brands fa-square-whatsapp fa-2xl" style="color: #74C0FC;"></i>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

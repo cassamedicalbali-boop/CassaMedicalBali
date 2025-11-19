@@ -1,0 +1,172 @@
+<body id="body">
+  <div class="container-fluid">
+    <div class="row pb-4">
+      <div class="col-md-12">
+        <p class="p-title-black">Website Biodata</p>
+      </div>
+
+      <div class="col-md-12">
+        <div class="admin-table-container mt-4">
+          <table class="table table-bordered admin-table biodata-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Content</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="website">
+
+              <!-- Address -->
+              <tr>
+                <th>1</th>
+                <td>Address</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.alamat" name="alamat"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Email -->
+              <tr>
+                <th>2</th>
+                <td>Email</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.email" name="email"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Whatsapp Number -->
+              <tr>
+                <th>3</th>
+                <td>Whatsapp Number</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.whatsappNumber" name="whatsappNumber"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Whatsapp Link -->
+              <tr>
+                <th>4</th>
+                <td>Whatsapp Link</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.whatsappLink" name="whatsappLink"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Operational Time -->
+              <tr>
+                <th>5</th>
+                <td>Operational Time</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.operationalTime" name="operationalTime"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Instagram 1 Name -->
+              <tr>
+                <th>6</th>
+                <td>Instagram 1 Name</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.instagramName1" name="instagramName1"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Instagram 1 Link -->
+              <tr>
+                <th>7</th>
+                <td>Instagram 1 Link</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.instagramLink1" name="instagramLink1"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Instagram 2 Name -->
+              <tr>
+                <th>8</th>
+                <td>Instagram 2 Name</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.instagramName2" name="instagramName2"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Instagram 2 Link -->
+              <tr>
+                <th>9</th>
+                <td>Instagram 2 Link</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.instagramLink2" name="instagramLink2"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Link Map -->
+              <tr>
+                <th>10</th>
+                <td>Link Map</td>
+                <td>
+                  <textarea class="form-control" rows="1" [(ngModel)]="website.linkmap" name="linkmap"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- About Us -->
+              <tr>
+                <th>11</th>
+                <td>About Us</td>
+                <td>
+                  <textarea class="form-control" rows="3" [(ngModel)]="website.aboutus" name="aboutus"></textarea>
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+              <!-- Logo -->
+              <tr>
+                <th>12</th>
+                <td>Logo</td>
+                <td>
+                  <input class="form-control" type="file" name="image" (change)="onFileSelected($event)" />
+                  <img class="admin-table-biodata-logo-img" [src]="website?.imageUrl || '../../../../assets/images/logo2.png'" />
+                </td>
+                <td class="text-center">
+                  <button type="button" class="btn btn-success" (click)="saveBiodata()">Save</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

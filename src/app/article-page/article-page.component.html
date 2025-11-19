@@ -1,0 +1,98 @@
+<body id="body">
+  <div class="container-fluid p-0">
+    <div class="content-space">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="space-text">Articles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Dynamic Articles -->
+    <div class="row pt-4 pb-4 g-4">
+      <div class="col-md-4" *ngFor="let article of articles">
+        <div class="card article-card h-100 shadow-custom">
+          <div class="p-2">
+            <a [routerLink]="['/detail-article', article._id]" (click)="scrollToTop()">
+              <img
+                [src]="article.imageUrl || '../../assets/images/article.jpg'"
+                class="card-img-top rounded-3"
+                alt="Article image"
+              />
+            </a>
+          </div>
+
+          <div class="card-body p-0 ps-3 pb-3 pe-3">
+            <a
+              [routerLink]="['/detail-article', article._id]"
+              class="no-text-decoration" (click)="scrollToTop()"
+            >
+              <h5 class="text-clamp-2 article-card-title">
+                {{ article.title }}
+              </h5>
+            </a>
+
+            <p class="article-card-date">
+              {{ article.date | date : "dd MMMM yyyy" }}
+            </p>
+
+            <p
+              class="text-clamp-3 article-card-des"
+              [innerHTML]="truncateHTML(article.description, 150)"
+            ></p>
+
+            <div class="text-end">
+              <a
+                [routerLink]="['/detail-article', article._id]"
+                class="btn btn-go-to-article" (click)="scrollToTop()"
+              >
+                Go to article
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="row" *ngIf="totalPages > 1">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+          <nav class="article-pagination">
+            <ul class="pagination">
+              <!-- Previous -->
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="changePage(currentPage - 1)">
+                  Previous
+                </a>
+              </li>
+
+              <!-- Page Numbers -->
+              <li
+                class="page-item"
+                *ngFor="let p of [].constructor(totalPages); let i = index"
+                [class.active]="currentPage === i + 1"
+              >
+                <a class="page-link" (click)="changePage(i + 1)">
+                  {{ i + 1 }}
+                </a>
+              </li>
+
+              <!-- Next -->
+              <li
+                class="page-item"
+                [class.disabled]="currentPage === totalPages"
+              >
+                <a class="page-link" (click)="changePage(currentPage + 1)">
+                  Next
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

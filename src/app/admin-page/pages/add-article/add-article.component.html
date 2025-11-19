@@ -1,0 +1,109 @@
+<div class="container-fluid pb-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card add-article-card">
+        <!-- HEADER -->
+        <div class="card-header">
+          <p class="p-title-black">Add Articles</p>
+          <div class="d-flex flex-column text-center align-items-start">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#" class="no-text-decoration">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" class="no-text-decoration">Articles</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  <a href="#" class="no-text-decoration">Add Articles</a>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="card-body">
+          <form>
+            <!-- TITLE -->
+            <div class="mb-3">
+              <label class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="title"
+                name="title"
+                placeholder="Enter article title"
+              />
+            </div>
+
+            <!-- DATE -->
+            <div class="mb-3">
+              <label class="form-label">Date</label>
+              <input
+                type="date"
+                class="form-control"
+                [(ngModel)]="selectedDate"
+                name="date"
+              />
+            </div>
+
+            <!-- CATEGORY -->
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="selectedCategory"
+                name="category"
+                placeholder="Enter category"
+              />
+            </div>
+
+            <!-- FILE UPLOAD -->
+            <div class="mb-3">
+              <label class="form-label">Article Image</label>
+              <input
+                class="form-control"
+                type="file"
+                (change)="onFileSelected($event)"
+              />
+            </div>
+
+            <!-- IMAGE PREVIEW -->
+            <div class="mb-3 d-flex flex-column gap-1" *ngIf="selectedFile">
+              <label class="form-label">Selected Image Preview</label>
+              <div class="mb-3 d-flex flex-column gap-1" *ngIf="previewUrl">
+                <img [src]="previewUrl" class="add-article-img" />
+              </div>
+            </div>
+
+            <!-- JODIT EDITOR -->
+            <div class="mb-3">
+              <label class="form-label">Content</label>
+              <div #editor class="editor-box"></div>
+            </div>
+          </form>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="card-footer">
+          <button
+            type="button"
+            class="btn btn-danger me-2"
+            (click)="resetFormArticle()"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary me-2"
+            (click)="submitArticle()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

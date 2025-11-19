@@ -1,0 +1,19 @@
+
+<body id="body">
+    <div class="container-fluid">
+        <div class="row pb-4">
+            <div class="col-md-12">
+                <p class="p-title-black">Dashboard</p>
+                <p>Welcome to dashboard page</p>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card shadow-custom" style="width: 18rem;">
+                    <div class="card-body text-center">
+                        <p class="p-title-blue">Total Article</p>
+                        <p class="p-title-blue" *ngIf="totalArticles > 0">{{ totalArticles }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

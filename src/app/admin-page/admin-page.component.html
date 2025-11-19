@@ -1,0 +1,126 @@
+<!-- GENRATE MAIN ADMIN PAGE -->
+<!-- ng g module admin-page --route admin --module app.module -->
+<!-- GENERATE ADMIN PAGE -->
+<!-- ng g module admin-page/pages/dashboard --route dashboard --module admin-page/admin-page-routing.module -->
+<!-- ng g module admin-page/pages/articles --route articles --module admin-page/admin-page-routing.module -->
+
+
+<div class="container-fluid p-0" id="admin-page">
+    <div class="row g-0">
+
+        <!-- Sidebar (Desktop Mode) -->
+        <div class="col-md-2 admin-sidebar p-0" id="sidebarContainer">
+            <div class="card">
+                <div class="card-header text-center">
+                    <img src="../../assets/images/logo2.png" class="sidebar-logo" alt="#">
+                </div>
+                <div class="card-body ps-0 pb-0 pe-0 pt-1">
+                    <div class="nav flex-column sidebar-section">
+                        <ul>
+                            <li class=""><a class="nav-link" routerLink="dashboard" routerLinkActive="active"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                            <li class=""><a class="nav-link" routerLink="articles" routerLinkActive="active"><i class="fa-solid fa-newspaper"></i> Articles</a></li>
+                            <li><a class="nav-link" routerLink="biodata" routerLinkActive="active"><i class="fa-solid fa-database"></i> Biodata</a></li>
+                            <!-- PRODUCTS DROPDOWN -->
+                            <!-- <li class=" dropdown sidebar-dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle d-flex justify-content-between align-items-center"
+                                    data-bs-toggle="collapse"
+                                    href="#productMenu"
+                                    role="button"
+                                >
+                                    Products
+                                    <i class="fa-solid fa-chevron-right dropdown-arrow"></i>
+                                </a>
+
+                                <ul class="collapse ps-3 mt-2" id="productMenu">
+                                    <li><a class="nav-link sub-link" routerLink="products/package1">Package 1</a></li>
+                                    <li><a class="nav-link sub-link" routerLink="products/package2">Package 2</a></li>
+                                    <li><a class="nav-link sub-link" routerLink="products/package3">Package 3</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer p-2 m-0 text-center">
+                    <button class="btn btn-danger sidebar-logout w-100" (click)="logout()">Logout</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Offcanvas Sidebar (Mobile Mode) -->
+        <div class="offcanvas offcanvas-start admin-offcanvas" tabindex="-1" id="sidebarOffcanvas">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title ps-4">Admin Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <div class="nav flex-column sidebar-section">
+                    <ul>
+                        <li class=""><a class="nav-link" routerLink="dashboard" routerLinkActive="active"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                        <li class=""><a class="nav-link" routerLink="articles" routerLinkActive="active"><i class="fa-solid fa-newspaper"> </i> Articles</a></li>
+                        <li><a class="nav-link" routerLink="biodata" routerLinkActive="active"><i class="fa-solid fa-database"></i> Biodata</a></li>
+                        <!-- PRODUCTS DROPDOWN -->
+                        <!-- <li class=" dropdown sidebar-dropdown">
+                            <a
+                                class="nav-link dropdown-toggle d-flex justify-content-between align-items-center"
+                                data-bs-toggle="collapse"
+                                href="#productMenu"
+                                role="button"
+                            >
+                                Products
+                                <i class="fa-solid fa-chevron-right dropdown-arrow"></i>
+                            </a>
+
+                            <ul class="collapse ps-3 mt-2" id="productMenu">
+                                <li><a class="nav-link sub-link" routerLink="products/package1">Package 1</a></li>
+                                <li><a class="nav-link sub-link" routerLink="products/package2">Package 2</a></li>
+                                <li><a class="nav-link sub-link" routerLink="products/package3">Package 3</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="offcanvas-bottom p-4">
+                 <button class="btn btn-outline-danger sidebar-logout w-100" (click)="logout()">Logout</button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="col-md-10">
+
+            <!-- NAVBAR -->
+
+            <div class="row g-0">
+                <div class="navbar sticky-top admin-navbar">
+                    <div class="container-fluid d-flex justify-content-between align-items-center">
+                        <button class="btn-admin-offcanvas" id="sidebarToggle" data-bs-toggle="offcanvas"
+                                data-bs-target="#sidebarOffcanvas">
+                                Menu
+                        </button>
+
+                        <img src="../../assets/images/logo2.png" class="admin-navbar-logo">
+                        <p class="dummy-text bg-warning"> </p>
+                        <div class="dropstart profile-dropdown">
+                            <button class="btn admin-dropdown-btn" data-bs-toggle="dropdown">Admin</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-center" href="#"><button class="btn btn-outline-danger">Log out</button></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-0 p-2">
+                <div class="card p-2">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

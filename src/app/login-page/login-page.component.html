@@ -1,0 +1,46 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <div class="text-center">
+      <img src="../../assets/images/logo2.png" class="login-logo" alt="Company Logo">
+    </div>
+
+    <h2 class="login-title text-center">Welcome Back, Have A Nice Day 😊</h2>
+
+    <form (ngSubmit)="login()">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control login-input"
+          placeholder="Enter your username"
+          [(ngModel)]="loginData.username"
+          name="username"
+          required
+        >
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Password</label>
+
+        <div class="input-group login-input-group">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control login-input"
+            placeholder="Enter your password"
+            [(ngModel)]="loginData.password"
+            name="password"
+            required
+          >
+
+          <span class="input-group-text password-icon" (click)="togglePassword()">
+            <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+          </span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-login w-100">Login</button>
+    </form>
+
+  </div>
+</div>

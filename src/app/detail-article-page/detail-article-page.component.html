@@ -1,0 +1,115 @@
+<body id="body">
+  <div class="container">
+    <!-- Main Article -->
+    <h3 class="p-title-blue text-center pt-4">{{ article?.title }}</h3>
+    <p class="text-center">{{ article?.date | date : "dd MMMM yyyy" }}</p>
+
+    <div class="article-section">
+      <div class="d-flex flex-column text-center align-items-start">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a routerLink="/" class="no-text-decoration">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a routerLink="/article" class="no-text-decoration">Articles</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              <a class="no-text-decoration">{{ article?.title }}</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img
+          [src]="article?.imageUrl || '../../assets/images/article.jpg'"
+          class="article-img"
+        />
+      </div>
+
+      <div class="col-md-12 d-flex justify-content-center">
+        <div class="article-section pt-4">
+          <p class="p-des" [innerHTML]="article?.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+  <!-- Related Articles Slider -->
+  <div class="container article-box">
+    <div class="row mt-4 mb-4 p-4">
+      <h1 class="p-title-white text-center">Articles</h1>
+      <div class="splide" id="article-slider">
+        <div class="splide__track p-4">
+          <div class="splide__list">
+            <div
+              class="splide__slide shadow-sm"
+              *ngFor="let a of relatedArticles"
+            >
+              <div class="card article-card h-100">
+                <div class="p-2">
+                  <a [routerLink]="['/detail-article', a._id]" (click)="scrollToTop()">
+                    <img
+                      [src]="a.imageUrl || '../../assets/images/article.jpg'"
+                      class="card-img-top rounded-3"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+                <div class="card-body p-0 ps-3 pb-3 pe-3">
+                  <a
+                    [routerLink]="['/detail-article', a._id]"
+                    class="no-text-decoration" (click)="scrollToTop()"
+                  >
+                    <h5 class="text-clamp-2 article-card-title">
+                      {{ a.title }}
+                    </h5>
+                  </a>
+                  <p class="article-card-date">
+                    {{ a.date | date : "dd MMMM yyyy" }}
+                  </p>
+                  <p
+                    class="text-clamp-3 article-card-des"
+                    [innerHTML]="truncateHTML(a.description, 150)"
+                  ></p>
+                  <div class="text-end">
+                    <a
+                      [routerLink]="['/detail-article', a._id]"
+                      class="btn btn-go-to-article" (click)="scrollToTop()"
+                      >Go to article</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mt-4 white-line" />
+      <div class="d-flex justify-content-between">
+        <div>
+          <a routerLink="/article" class="btn btn-read-more-article"
+            >Read More Article ></a
+          >
+        </div>
+        <div>
+          <!-- ARROW HERE -->
+          <div class="d-flex gap-2">
+            <button class="article-arrow" (click)="goPrev()">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="article-arrow" (click)="goNext()">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

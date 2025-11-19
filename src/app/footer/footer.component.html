@@ -1,0 +1,75 @@
+<div id="footer" *ngIf="website">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-12 p-4">
+                <a routerLink="/" (click)="closeOffcanvas()">
+                    <img [src]="website.imageUrl || '../../assets/images/logo2.png'" class="footer-logo">
+                </a>
+                <p class="footer-title mt-2">Our Instagram</p>
+                <ul>
+                    <li class="mb-2">
+                        <a [href]="website.instagramLink1" target="_blank">
+                            <i class="fa-brands fa-instagram fa-lg"></i> {{ website.instagramName1 }}
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a [href]="website.instagramLink2" target="_blank">
+                            <i class="fa-brands fa-instagram fa-lg"></i> {{ website.instagramName2 }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-6 d-flex align-items-center">
+                <ul class="text-start p-0 m-0">
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="belly-package">IV Bali Belly Package</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="hangover-package">IV Hangover Package</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="flu-package">IV Flu Package</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="dengue-package">IV Dengue Blood Test</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="jetlag-package">IV Jet Lag Package</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="iv-immune-booster">IV Immune Booster</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-6 d-flex align-items-center pt-4">
+                <ul class="text-start p-0 m-0">
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="doctor-consultation">Doctor Consultation</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="call-service">On Call Service</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="laboratory-testing">Laboratory Testing</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="std-testing">STD Testing</a></li>
+                    <li class="mb-2 footer-title" (click)="closeOffcanvas()"><a routerLink="wound-treatment">Wound Treatment</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-12 d-flex align-items-center pt-4">
+                <div class="row">
+                    <div class="col-md-12 col-6">
+                        <p class="footer-title">Menu</p>
+                        <ul class="text-start p-0 m-0">
+                            <li class="mb-2 footer-a" (click)="closeOffcanvas()"><a routerLink="article">Articles</a></li>
+                            <li class="mb-2 footer-a" (click)="closeOffcanvas()"><a routerLink="about-us">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12 col-6">
+                        <a routerLink="contact" class="no-text-decoration" (click)="closeOffcanvas()"><p class="footer-title">Contact</p></a>
+                        <ul class="text-start p-0 m-0">
+                            <li class="mb-2 footer-a">
+                                <a [href]="'https://maps.google.com/?q=' + website.alamat" target="_blank">
+                                    <i class="fa-solid fa-location-dot fa-lg footer-icon"></i> {{ website.alamat }}
+                                </a>
+                            </li>
+                            <li class="mb-2 footer-a">
+                                <a [href]="'https://wa.me/' + website.whatsappNumber" target="_blank">
+                                    <i class="fa-solid fa-phone fa-lg footer-icon"></i> {{ website.whatsappNumber }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="copyright" class="d-flex justify-content-center align-items-center">
+    <div class="p-2">
+        <p class="m-0 copyright-text">Copyright © 2025 Cassa Medical Clinic</p>
+    </div>
+</div>

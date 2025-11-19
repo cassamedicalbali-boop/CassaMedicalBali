@@ -1,0 +1,163 @@
+<body id="body">
+
+  <div class="container-fluid pb-4">
+
+    <!-- Title -->
+    <div class="row">
+      <div class="col-md-12">
+        <p class="p-title-black">Articles</p>
+      </div>
+    </div>
+
+    <!-- Search + Date -->
+    <div class="row">
+
+      <div class="col-6">
+        <label class="form-label">Search Articles</label>
+        <input
+          type="text"
+          class="form-control admin-search"
+          placeholder="Search by Articles Name"
+          [(ngModel)]="searchQuery"
+        />
+      </div>
+
+      <div class="col-6">
+        <label class="form-label">Articles Date</label>
+        <input
+          id="startDate"
+          class="form-control"
+          type="date"
+          [(ngModel)]="filterDate"
+        />
+      </div>
+
+      <div class="col-12 pt-2">
+        <div class="d-flex flex-row">
+          <button type="button" class="btn btn-primary d-flex align-items-center me-2" (click)="searchArticles()">
+            <i class="fa-solid fa-magnifying-glass me-1"></i> Search
+          </button>
+
+          <a routerLink="/admin/add-article" class="btn btn-primary d-flex align-items-center me-2">
+            <i class="fa-solid fa-plus me-1"></i> Add
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Article Table -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="admin-table-container mt-4">
+
+          <table class="table table-bordered admin-table article-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Img</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <!-- DYNAMIC LOOP -->
+              <tr *ngFor="let article of paginatedArticles; let i = index">
+
+                <th>{{ (currentPage - 1) * pageSize + i + 1 }}</th>
+
+                <td class="text-center">
+                  <img
+                    [src]="article.imageUrl || 'assets/images/default.jpg'"
+                    class="detail-table-img"
+                    alt="article image"
+                    data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#imgModal' + article._id"
+                  />
+
+                  <!-- Modal -->
+                  <div class="modal fade" [id]="'imgModal' + article._id" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <img
+                            [src]="article.imageUrl"
+                            class="img-fluid modal-img"
+                            alt="modal image"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td>{{ article.title }}</td>
+
+                <td>{{ article.date | date:'dd MMM yyyy' }}</td>
+
+                <td class="text-center">
+                  <div class="d-flex flex-column align-items-center gap-2">
+
+                    <!-- DELETE -->
+                    <button class="btn btn-danger" (click)="deleteArticle(article._id)">
+                      <i class="fa-regular fa-trash-can"></i> Delete
+                    </button>
+
+                    <!-- EDIT (FIXED) -->
+                    <a
+                      class="btn btn-primary"
+                      [routerLink]="['/admin/edit-article', article._id]"
+                    >
+                      <i class="fa-regular fa-pen-to-square"></i> Edit
+                    </a>
+
+                  </div>
+                </td>
+
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+          <nav class="article-pagination">
+            <ul class="pagination">
+
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>
+              </li>
+
+              <li
+                *ngFor="let p of [].constructor(totalPages); let idx = index"
+                class="page-item"
+                [class.active]="currentPage === idx + 1"
+              >
+                <a class="page-link" (click)="changePage(idx + 1)">
+                  {{ idx + 1 }}
+                </a>
+              </li>
+
+              <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>

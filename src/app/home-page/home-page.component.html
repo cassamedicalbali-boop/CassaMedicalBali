@@ -1,0 +1,747 @@
+<body id="body">
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      <div class="splide" id="carousel-slider">
+        <div class="splide__track">
+          <div class="splide__list">
+            <div class="splide__slide slide-img">
+              <div class="slide-wrapper">
+                <img src="../../assets/images/carousel1.jpg" />
+                <div class="slide-caption">
+                  <h3>Cassa Medical Clinic</h3>
+                  <p>
+                    We are dedicated to provide quality healthcare that’s
+                    convenient and affordable
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-carousel w-75 no-text-decoration"
+                    (click)="sendWhatsappMessage()"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="splide__slide slide-img">
+              <div class="slide-wrapper">
+                <img src="../../assets/images/carousel2.jpg" />
+                <div class="slide-caption">
+                  <h3>IV Immune Booster</h3>
+                  <p>
+                    Each infusion is carefully formulated with essential
+                    vitamins, minerals, and electrolytes to help your body
+                    recover, rehydrate, and feel revitalized from the inside
+                    out.
+                  </p>
+                  <a
+                    [href]="'https://wa.me/' + website.whatsappNumber"
+                    target="_blank"
+                    class="btn btn-carousel w-75 no-text-decoration"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="splide__slide slide-img">
+              <div class="slide-wrapper">
+                <img src="../../assets/images/carousel3.jpg" />
+                <div class="slide-caption">
+                  <h3>Doctor Consultation</h3>
+                  <p>
+                    Our licensed doctors and nurses provides professional, fast,
+                    and reliable treatment for Bali Belly, food poisoning,
+                    fever, infections, dehydration, wound care, ear problems,
+                    STDs, and more —
+                  </p>
+                  <a
+                    [href]="'https://wa.me/' + website.whatsappNumber"
+                    target="_blank"
+                    class="btn btn-carousel w-75 no-text-decoration"
+                    >Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-0">
+      <div class="col-12 blue-box">
+        <div class="col-12 green-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid position-relative iv-section mb-4">
+    <div class="product-background"></div>
+    <h1 class="text-center p-title-blue pt-4">IV Therapies</h1>
+    <!-- background -->
+    <div class="container">
+      <div class="row g-3 pt-4 pb-4">
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="belly-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-bali-belly.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="belly-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Bali Belly Package
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Fast relief from Bali Belly at Cassa Medical Clinic. IV
+                rehydration with electrolytes, vitamins & additional oral
+                medicines. Professional care, open 24/7 — walk in or book online
+                today!
+              </p>
+              <a
+                routerLink="belly-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageBelly()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="hangover-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-hangover.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="hangover-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Hangover Package
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Woke up with a pounding headache, fatigue, dizziness, or that
+                unbearable thirst after a hangover? Don’t worry — we’ve got you
+                covered! Get quick relief with our IV Hangover package at Cassa
+                Medical Clinic
+              </p>
+              <a
+                routerLink="hangover-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageHangover()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="immune-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-immune-booster.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="immune-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Immune Booster
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Restore hydration and energy fast with our IV Immune Booster — a
+                powerful blend of fluids, vitamins, and electrolytes designed to
+                revitalize you from the inside out.
+              </p>
+              <a
+                routerLink="immune-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageImmune()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="jetlag-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-jet-lag.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="jetlag-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Jet Lag Package
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Beat jet lag fast with our IV Jet Lag Therapy at Cassa Medical
+                Clinic. Rehydrate, restore energy, and feel refreshed after long
+                flights—so you can fully enjoy your time in Bali.
+              </p>
+              <a
+                routerLink="jetlag-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageJetLag()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="dengue-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-dengue.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="dengue-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Dengue Package
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Our medical team provides IV Drip Therapy and supportive
+                treatment tailored for dengue fever patients. These treatments
+                help restore fluid balance, relieve symptoms, and support faster
+                recovery — so you can get back on your feet safely and
+                comfortably.
+              </p>
+              <a
+                routerLink="dengue-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageDengue()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <div class="product-card card h-100 shadow-sm">
+            <a routerLink="flu-package" (click)="scrollToTop()"
+              ><img
+                src="../../assets/images/iv-flu-package.jpg"
+                class="card-img-top product-card-img"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <a
+                routerLink="flu-package"
+                class="no-text-decoration"
+                (click)="scrollToTop()"
+                ><h2 class="card-title product-card-title">
+                  IV Flu Package
+                </h2></a
+              >
+              <p class="card-text product-card-text">
+                Feeling run down with the flu in Bali? Our Flu Relief IV Drip
+                helps reduce fever, ease body aches, and boost your immune
+                system — so you can recover quickly and get back to enjoying
+                paradise.
+              </p>
+              <a
+                routerLink="flu-package"
+                class="product-arrow no-text-decoration"
+                (click)="scrollToTop()"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="card-footer product-card-footer text-end mb-2">
+              <a class="btn btn-book-now w-100" (click)="sendWhatsappMessageFlu()"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+  <div class="container-fluid service-dark-blue-box pb-4 g-0">
+    <div
+      class="container-fluid service-blue-box p-0 pb-4 position-relative service-section"
+    >
+      <div class="service-background"></div>
+      <div class="container pb-4">
+        <div class="row pt-4 pb-4 g-3">
+          <h1 class="text-center p-title-white pt-2">Medical Services</h1>
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="service-card card shadow-sm border-service">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <a
+                      routerLink="doctor-consultation"
+                      class="no-text-decoration"
+                      (click)="scrollToTop()"
+                      ><h1 class="service-card-title pt-2">
+                        Doctor Consultation
+                      </h1></a
+                    >
+                    <a
+                      class="btn service-card-btn mt-2 w-100"
+                      (click)="sendWhatsappMessageDoctor()"
+                      >Book Now</a
+                    >
+                  </div>
+                  <div
+                    class="col-4 justify-content-center align-content-center"
+                  >
+                    <a routerLink="doctor-consultation" (click)="scrollToTop()"
+                      ><img
+                        src="../../assets/images/doctor-consultation.jpg"
+                        class="service-card-img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="service-card card shadow-sm border-service">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <a
+                      routerLink="call-service"
+                      class="no-text-decoration"
+                      (click)="scrollToTop()"
+                      ><h1 class="service-card-title pt-2">
+                        On Call Service
+                      </h1></a
+                    >
+                    <a
+                      class="btn service-card-btn mt-2 w-100"
+                      (click)="sendWhatsappMessageCall()"
+                      >Book Now</a
+                    >
+                  </div>
+                  <div
+                    class="col-4 justify-content-center align-content-center"
+                  >
+                    <a routerLink="call-service" (click)="scrollToTop()"
+                      ><img
+                        src="../../assets/images/on-call-service.jpg"
+                        class="service-card-img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="service-card card shadow-sm border-service">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <a
+                      routerLink="wound-treatment"
+                      class="no-text-decoration"
+                      (click)="scrollToTop()"
+                      ><h1 class="service-card-title pt-2">
+                        Wound Treatment
+                      </h1></a
+                    >
+                    <a
+                      class="btn service-card-btn mt-2 w-100"
+                      (click)="sendWhatsappMessageTreatment()"
+                      >Book Now</a
+                    >
+                  </div>
+                  <div
+                    class="col-4 justify-content-center align-content-center"
+                  >
+                    <a routerLink="wound-treatment" (click)="scrollToTop()"
+                      ><img
+                        src="../../assets/images/wound-treatment.jpg"
+                        class="service-card-img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="service-card card shadow-sm border-service">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <a
+                      routerLink="laboratory-testing"
+                      class="no-text-decoration"
+                      (click)="scrollToTop()"
+                      ><h1 class="service-card-title pt-2">
+                        Laboratory Testing
+                      </h1>
+                      <a
+                        class="btn service-card-btn mt-2 w-100"
+                        (click)="sendWhatsappMessageLaboratory()"
+                        >Book Now</a
+                      ></a
+                    >
+                  </div>
+                  <div
+                    class="col-4 justify-content-center align-content-center"
+                  >
+                    <a routerLink="laboratory-testing" (click)="scrollToTop()"
+                      ><img
+                        src="../../assets/images/laboratory-testing.jpg"
+                        class="service-card-img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-12">
+            <div class="service-card card shadow-sm border-service">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <a
+                      routerLink="std-testing"
+                      class="no-text-decoration"
+                      (click)="scrollToTop()"
+                      ><h1 class="service-card-title pt-2">STD Testing</h1></a
+                    >
+                    <a
+                      class="btn service-card-btn mt-2 w-100"
+                      (click)="sendWhatsappMessageStd()"
+                      >Book Now</a
+                    >
+                  </div>
+                  <div
+                    class="col-4 justify-content-center align-content-center"
+                  >
+                    <a routerLink="std-testing" (click)="scrollToTop()"
+                      ><img
+                        src="../../assets/images/std-testing.jpg"
+                        class="service-card-img"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+  <div class="container">
+    <div class="row p-4">
+      <div class="col-md-1"></div>
+      <div class="col-md-4 justify-content-center align-content-center">
+        <img src="../../assets/images/about-1.jpg" class="about-section-img" />
+      </div>
+      <div
+        class="col-md-7 justify-content-center align-content-center"
+        *ngIf="website"
+      >
+        <div class="p-4">
+          <h4 class="p-title-blue">About Cassa Medical Clinic</h4>
+          <div class="lines-wrapper">
+            <div class="blue-line"></div>
+            <div class="green-line"></div>
+          </div>
+          <p class="p-des-blue">
+            {{
+              website.aboutus ||
+                "We are an outpatient clinic located at Jalan Pantai Berawa, Gang Sri Kahyangan, No 11, Badung. We are dedicated to provide quality healthcare that’s convenient and affordable. Our professional medical teams offers both onsite and home services, ensuring you get the care you need wherever you are. We’re committed to delivering excellent service with compassion and expertise — because your health is our priority."
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4"></div>
+
+  <div class="container article-box">
+    <div class="row mt-4 mb-4 p-4">
+      <h1 class="p-title-white text-center pb-3">Articles</h1>
+      <div class="splide" id="article-slider">
+        <div class="splide__track p-4">
+          <div class="splide__list">
+            <div
+              class="splide__slide shadow-sm"
+              *ngFor="let article of articles"
+            >
+              <div class="card article-card h-100">
+                <div class="p-2">
+                  <a
+                    [routerLink]="['/detail-article', article._id]"
+                    (click)="scrollToTop()"
+                  >
+                    <img
+                      [src]="
+                        article.imageUrl || '../../assets/images/article.jpg'
+                      "
+                      class="card-img-top rounded-3"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+
+                <div class="card-body p-0 ps-3 pb-3 pe-3">
+                  <a
+                    [routerLink]="['/detail-article', article._id]"
+                    class="no-text-decoration"
+                    (click)="scrollToTop()"
+                  >
+                    <h5 class="text-clamp-2 article-card-title">
+                      {{ article.title }}
+                    </h5>
+                  </a>
+
+                  <p class="article-card-date">
+                    {{ article.date | date : "dd MMMM yyyy" }}
+                  </p>
+
+                  <p
+                    class="text-clamp-3 article-card-des"
+                    [innerHTML]="truncateHTML(article.description, 150)"
+                  ></p>
+
+                  <div class="text-end">
+                    <a
+                      [routerLink]="['/detail-article', article._id]"
+                      class="btn btn-go-to-article"
+                      (click)="scrollToTop()"
+                    >
+                      Go to article
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mt-4 white-line" />
+      <div class="d-flex justify-content-between">
+        <div>
+          <a routerLink="article" class="btn btn-read-more-article"
+            >Read More Article ></a
+          >
+        </div>
+        <div>
+          <!-- ARROW HERE -->
+          <div class="d-flex gap-2">
+            <button class="article-arrow" (click)="goPrev()">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <button class="article-arrow" (click)="goNext()">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+  <div class="container">
+    <div class="row pb-4">
+      <h2 class="p-title-blue text-center">Testimonials</h2>
+      <div class="splide" id="testimonial-slider">
+        <div class="splide__track p-4">
+          <div class="splide__list">
+            <div class="splide__slide shadow-custom">
+              <div class="card testimonial-card h-100">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="../../assets/images/t1.jpg"
+                          class=""
+                          alt="..."
+                        />
+                        <p class="ps-2 testimonial-card-name">Samantha</p>
+                      </div>
+                      <hr class="mt-2" />
+                      <i
+                        class="fa-solid fa-quote-left pb-1"
+                        style="color: #cacaca"
+                      ></i>
+                      <p class="testimonial-card-text">
+                        "I’ve tried IV drips at a few clinics before, but the
+                        service at Cassa Medical Clinic is on another level. The
+                        staff are professional, friendly, and make you feel
+                        completely at ease. I left feeling refreshed, energized,
+                        and ready to take on Bali!"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="splide__slide shadow-custom">
+              <div class="card testimonial-card h-100">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="../../assets/images/t2.jpg"
+                          class=""
+                          alt="..."
+                        />
+                        <p class="ps-2 testimonial-card-name">Emi</p>
+                      </div>
+                      <hr class="mt-2" />
+                      <i
+                        class="fa-solid fa-quote-left pb-1"
+                        style="color: #cacaca"
+                      ></i>
+                      <p class="testimonial-card-text">
+                        "I was a bit nervous about getting an IV drip, but the
+                        staff at Cassa Medical Clinic were incredibly reassuring
+                        and skilled. The hydration and vitamin therapy worked
+                        wonders—I felt a noticeable boost in energy and overall
+                        wellbeing."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="splide__slide shadow-custom">
+              <div class="card testimonial-card h-100">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="../../assets/images/t3.jpg"
+                          class=""
+                          alt="..."
+                        />
+                        <p class="ps-2 testimonial-card-name">James</p>
+                      </div>
+                      <hr class="mt-2" />
+                      <i
+                        class="fa-solid fa-quote-left pb-1"
+                        style="color: #cacaca"
+                      ></i>
+                      <p class="testimonial-card-text">
+                        "Cassa Medical Clinic’s IV drip treatment helped me
+                        recover from jet lag faster than I expected. The
+                        environment is clean and welcoming, and the team
+                        explained everything thoroughly. I will definitely come
+                        back during my next trip to Bali."
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="splide__slide shadow-custom">
+              <div class="card testimonial-card h-100">
+                <div class="card-body p-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="d-flex flex-row align-items-center">
+                        <img
+                          src="../../assets/images/std-testing.jpg"
+                          class=""
+                          alt="..."
+                        />
+                        <p class="ps-2 testimonial-card-name">Lorem Ipsum</p>
+                      </div>
+                      <hr class="mt-2" />
+                      <i
+                        class="fa-solid fa-quote-left pb-1"
+                        style="color: #cacaca"
+                      ></i>
+                      <p class="testimonial-card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card’s content. Some quick
+                        example text to build on the card title and make up the
+                        bulk of the card’s content.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
