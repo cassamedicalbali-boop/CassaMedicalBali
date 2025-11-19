@@ -20,8 +20,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/cassamedicalclinic/index.html"
+      "dest": "dist/cassamedicalclinic/index.html"
     }
   ]
 }
-
