@@ -301,6 +301,68 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
   }
 });
 
+app.get("/sitemap.xml", async (req, res) => {
+  try {
+    const baseUrl = "https://cassamedicalbali.vercel.app";
+
+    // Fetch all article IDs
+    const articles = await article.find().sort({ _id: -1 });
+
+    // Static routes
+    const staticUrls = [
+      "",
+      "home",
+      "service",
+      "about-us",
+      "contact",
+      "article",
+      "login",
+      "dengue-package",
+      "flu-package",
+      "hangover-package",
+      "immune-package",
+      "jetlag-package",
+      "belly-package",
+      "doctor-consultation",
+      "call-service",
+      "laboratory-testing",
+      "std-testing",
+      "wound-treatment",
+    ];
+
+    // Build XML dynamically
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+`;
+
+    // Add static URLs
+    staticUrls.forEach(url => {
+      xml += `
+  <url>
+    <loc>${baseUrl}/${url}</loc>
+    <priority>0.8</priority>
+  </url>`;
+    });
+
+    // Add dynamic article pages
+    articles.forEach(a => {
+      xml += `
+  <url>
+    <loc>${baseUrl}/detail-article/${a._id}</loc>
+    <priority>0.7</priority>
+  </url>`;
+    });
+
+    xml += "\n</urlset>";
+
+    res.header("Content-Type", "application/xml");
+    res.send(xml);
+
+  } catch (err) {
+    res.status(500).send("Error generating sitemap");
+  }
+});
+
 
 const PORT = 5000;
 app.listen(PORT, () => {
