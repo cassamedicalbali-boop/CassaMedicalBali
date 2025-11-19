@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class WebsiteService {
 
   //private baseUrl = 'http://localhost:5000/api'
-  private baseUrl = 'https://cassamedicalclinic.vercel.app/api';
+  private baseUrl = 'https://cassamedicalbali.vercel.app/api';
 
   constructor(private  http: HttpClient) {}
 

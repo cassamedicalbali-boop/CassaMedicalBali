@@ -20,7 +20,6 @@ app.use(parser.json({ limit: '50mb' }));
 
 const mongoURI = 'mongodb+srv://cassamedicalbali:CassaClinic@cassamedicalclinic.369z5aw.mongodb.net/CassaMedicalClinic';
 
-
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected to database: Cassa Medical Clinic'))
