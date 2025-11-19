@@ -20,11 +20,7 @@
     },
     {
       "source": "/sitemap.xml",
-      "destination": "/dist/cassamedicalclinic/sitemap.xml"
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/dist/cassamedicalclinic/robots.txt"
+      "destination": "/backend/index.js"
     },
     {
       "source": "/:path*",

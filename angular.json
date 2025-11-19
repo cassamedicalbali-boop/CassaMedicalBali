@@ -23,7 +23,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/robots.txt"
+              "src/robots.txt"
             ],
             "styles": [
               "node_modules/jodit/es2021/jodit.min.css",
