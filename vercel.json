@@ -16,11 +16,12 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/index.js"
+      "dest": "/backend/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "dist/cassamedicalclinic/index.html"
+      "dest": "/dist/cassamedicalclinic/index.html"
     }
   ]
 }
+
