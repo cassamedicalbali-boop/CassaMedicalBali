@@ -17,6 +17,11 @@
     {
       "src": "/api/(.*)",
       "dest": "/backend/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/cassamedicalclinic/index.html"
     }
   ]
 }
+
