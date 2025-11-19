@@ -306,7 +306,7 @@ app.get('/sitemap.xml', async (req, res) => {
     const baseUrl = 'https://cassamedicalbali.vercel.app';
 
     // Ambil semua artikel
-    const articles = await Article.find().sort({ _id: -1 }).lean();
+    const articles = await article.find().sort({ _id: -1 }).lean();
 
     // Daftar route statis
     const staticRoutes = [
