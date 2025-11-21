@@ -31,6 +31,7 @@ export class AboutUsPageComponent implements AfterViewInit {
       pagination: false,
       arrows: true,
       breakpoints: {
+        848: { perPage: 2 },
         768: { perPage: 2 },
         576: { perPage: 1 },
       },

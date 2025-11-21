@@ -113,6 +113,10 @@ export class DetailArticlePageComponent implements AfterViewInit, OnDestroy {
         right: '50%',
       },
       breakpoints: {
+        848:{
+          perPage: 2,
+          gap: '1rem',
+        },
         768: {
           perPage: 2,
           gap: '1rem',
