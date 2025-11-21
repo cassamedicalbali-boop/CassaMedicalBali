@@ -13,8 +13,6 @@ export class LaboratoryTestingPageComponent {
       private websiteservice: WebsiteService
     ) {}
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/*******  f4a44dde-895d-4238-9539-d287a105b603  *******/
   ngOnInit(): void {
     this.fetchWebsite();
   }
@@ -27,7 +25,7 @@ export class LaboratoryTestingPageComponent {
   }
 
   sendWhatsappMessage() {
-    const message = `Halo, Saya Mau Booking Layanan Laboratory Testing`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Laboratory Testing. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');

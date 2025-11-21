@@ -25,7 +25,7 @@ export class DoctorConsultationPageComponent {
   }
 
   sendWhatsappMessage() {
-    const message = `Halo, Saya Mau Booking Layanan Doctor Consultation`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Doctor Consultation. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');

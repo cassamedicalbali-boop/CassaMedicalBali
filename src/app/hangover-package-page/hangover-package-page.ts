@@ -25,13 +25,13 @@ export class HangoverPackagePage {
     }
   
     sendWhatsappMessage1() {
-      const message = `Halo, Saya Mau Booking Paket Hangover Premium`;
+      const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Hangover Premium Package. Can you assist me with available time slot, please? Thank you.`;
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
   
       window.open(whatsappUrl, '_blank');
     }
     sendWhatsappMessage2() {
-      const message = `Halo, Saya Mau Booking Paket Hangover Ultimate`;
+      const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Hangover Ultimate Package. Can you assist me with available time slot, please? Thank you.`;
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
   
       window.open(whatsappUrl, '_blank');

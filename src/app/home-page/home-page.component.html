@@ -34,9 +34,7 @@
                     out.
                   </p>
                   <a
-                    [href]="'https://wa.me/' + website.whatsappNumber"
-                    target="_blank"
-                    class="btn btn-carousel w-75 no-text-decoration"
+                    class="btn btn-carousel w-75 no-text-decoration" (click)="sendWhatsappMessageImmune()"
                     >Book Now</a
                   >
                 </div>
@@ -54,9 +52,7 @@
                     STDs, and more —
                   </p>
                   <a
-                    [href]="'https://wa.me/' + website.whatsappNumber"
-                    target="_blank"
-                    class="btn btn-carousel w-75 no-text-decoration"
+                    class="btn btn-carousel w-75 no-text-decoration" (click)="sendWhatsappMessageDoctor()"
                     >Book Now</a
                   >
                 </div>

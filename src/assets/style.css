@@ -447,6 +447,9 @@
     padding: 0.8rem 1.8rem;
     border-radius: 10px;
     border: none !important;
+    font-weight: 600;
+    font-size: 22px;
+    border: 4px solid #ffffff !important;
 }
 
 .btn-carousel:hover{
@@ -476,7 +479,7 @@
     }
     .btn-carousel {
         padding: 0.6rem 1.2rem;
-        font-size: 12px;
+        font-size: 20px;
         border-radius: 8px;
     }
 }
@@ -521,8 +524,9 @@
     }
     .btn-carousel {
         padding: 0.6rem 1.2rem;
-        font-size: 12px;
+        font-size: 20px;
         border-radius: 8px;
+        border: 3px solid #ffffff !important;
     }
     
 }
@@ -545,9 +549,10 @@
         font-size: 12px;
     }
       .btn-carousel {
-        padding: 0.5rem 1.0rem;
-        font-size: 10px;
+        padding: 0.2rem 1.0rem;
+        font-size: 20px;
         border-radius: 6px;
+        border: 2px solid #ffffff !important;
     }
 }
 
@@ -795,9 +800,10 @@
     color: #ffffff !important;
     padding: 0.5rem 1.4rem;
     border-radius: 3rem;
-    font-size: 16px;
+    font-size: 24px;
     border: none;
     transition: 0.25s ease;
+    font-weight: 600;
 }
 
 .btn-book-now:hover {
@@ -848,7 +854,7 @@
         font-size: 15px;
     }
     .btn-book-now {
-        font-size: 15px;
+        font-size: 20px;
         padding: 0.5rem 1.2rem;
     }
 }
@@ -866,7 +872,7 @@
         font-size: 14px;
     }
     .btn-book-now {
-        font-size: 14px;
+        font-size: 20px;
         padding: 0.4rem 1rem;
     }
 }
@@ -884,7 +890,7 @@
         font-size: 13px;
     }
     .btn-book-now {
-        font-size: 13px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -964,9 +970,10 @@
     color: #ffffff !important;
     padding: 0.5rem 1.4rem;
     border-radius: 3rem;
-    font-size: 16px;
+    font-size: 24px;
     border: none;
     transition: 0.25s ease;
+    font-weight: 600;
 }
 .service-card-btn:hover {
     background-color: #225E2C !important;
@@ -981,7 +988,7 @@
         font-size: 18px;
     }
     .service-card-btn{
-        font-size: 12px;
+        font-size: 20px;
         padding: 0.5rem 1.2rem;
     }
 }
@@ -995,7 +1002,7 @@
         font-size: 20px;
     }
     .service-card-btn{
-        font-size: 10px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -1009,7 +1016,7 @@
         font-size: 24px;
     }
     .service-card-btn{
-        font-size: 12px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -1519,12 +1526,26 @@
     color: #ffffff;
     border: none !important;
     transition: .25s ease;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 .btn-package:hover{
     background-color: #1f5a94;
+    color: #ffffff;
+}
+
+.btn-package-green{
+    background-color: #048B03;
+    color: #ffffff;
+    border: none !important;
+    transition: .25s ease;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn-package-green:hover{
+    background-color: #225E2C;
     color: #ffffff;
 }
 
@@ -1539,7 +1560,11 @@
         font-size: 15px;
     }
     .btn-package{
-        font-size: 18px;
+        font-size: 20px;
+        padding: 0.6rem 1.4rem;
+    }
+    .btn-package-green{
+        font-size: 20px;
         padding: 0.6rem 1.4rem;
     }
 }
@@ -1555,7 +1580,11 @@
         font-size: 14px;
     }
     .btn-package{
-        font-size: 17px;
+        font-size: 20px;
+        padding: 0.55rem 1.3rem;
+    }
+    .btn-package-green{
+        font-size: 20px;
         padding: 0.55rem 1.3rem;
     }
 }
@@ -1574,7 +1603,13 @@
         text-align: center;
     }
     .btn-package{
-        font-size: 16px;
+        font-size: 20px;
+        width: 100%;
+        padding: 0.6rem 1.2rem;
+        text-align: center;
+    }
+    .btn-package-green{
+        font-size: 20px;
         width: 100%;
         padding: 0.6rem 1.2rem;
         text-align: center;

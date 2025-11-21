@@ -26,13 +26,13 @@ export class BellyPackageComponent{
   }
 
   sendWhatsappMessage1() {
-    const message = `Halo, Saya Mau Booking Paket Bali Belly Premium`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Bali Belly Premium Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');
   }
   sendWhatsappMessage2() {
-    const message = `Halo, Saya Mau Booking Paket Bali Belly Ultimate`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Bali Belly Ultimate Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');

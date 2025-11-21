@@ -24,8 +24,26 @@ export class StdTestingPageComponent {
     });
   }
 
-  sendWhatsappMessage() {
-    const message = `Halo, Saya Mau Booking Layanan STD Testing`;
+  sendWhatsappMessage1() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Basic Urine PCR Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+  sendWhatsappMessage2() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Primary Urine STD Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+  sendWhatsappMessage3() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Primary Blood STD Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+  sendWhatsappMessage4() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Essential Urine PCR Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');

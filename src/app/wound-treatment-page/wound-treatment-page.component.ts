@@ -25,7 +25,7 @@ export class WoundTreatmentPageComponent {
   }
 
   sendWhatsappMessage() {
-    const message = `Halo, Saya Mau Booking Layanan Wound Treatment`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Wound Treatment. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');
