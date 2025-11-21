@@ -17,10 +17,15 @@
           <div class="p-2">
             <a [routerLink]="['/detail-article', article._id]" (click)="scrollToTop()">
               <img
-                [src]="article.imageUrl || '../../assets/images/article.jpg'"
+                [src]="'../../assets/images/article.jpg'"
                 class="card-img-top rounded-3"
                 alt="Article image"
               />
+              <!-- <img
+                [src]="article.imageUrl || '../../assets/images/article.jpg'"
+                class="card-img-top rounded-3"
+                alt="Article image"
+              /> -->
             </a>
           </div>
 
