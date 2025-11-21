@@ -7,9 +7,10 @@ const compression = require('compression');
 const multer = require('multer');
 const jwt = require("jsonwebtoken");
 
-const admins = require('./schemas/admin')
-const article = require('./schemas/article')
-const website = require('./schemas/website')
+const admins = require('./schemas/admin');
+const article = require('./schemas/article');
+const website = require('./schemas/website');
+
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
@@ -27,16 +28,25 @@ mongoose
 
 const { v2: cloudinary } = require("cloudinary");
 
-// Configure Cloudinary
+// Configure Cloudinary Private CDN
 cloudinary.config({
   cloud_name: "dccp9q30k",
   api_key: "225543437123415",
   api_secret: "L57Lrr4_mfojeg1d5tDujHxtR6k",
+  secure: true,
+  private_cdn: true
 });
+
+// Helper: convert secure_url → private CDN version
+function convertToPrivateCDN(url) {
+  return url.replace(
+    "https://res.cloudinary.com/",
+    "https://dccp9q30k-res.cloudinary.com/"
+  );
+}
 
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
-
 
   const foundAdmin = await admins.findOne({ username });
   if (!foundAdmin) {
@@ -67,9 +77,8 @@ app.get('/api/articles', async (req, res) => {
     const pageSize = Math.max(1, parseInt(req.query.pageSize) || 6);
     const total = await article.countDocuments();
 
-    // Use the _id field to sort (implicitly sorts by creation date as well)
     const articles = await article.find()
-      .sort({ _id: -1 })  // Sort by _id in descending order (newest first)
+      .sort({ _id: -1 })
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 
@@ -87,24 +96,24 @@ app.post("/api/articles", upload.single("image"), async (req, res) => {
       return res.status(400).json({ message: "Image is required" });
     }
 
-    // Ensure `description` is always an array
+    // Ensure description is always an array
     let descriptionArray;
     try {
-      descriptionArray = JSON.parse(description); // Convert JSON string to array
-      if (!Array.isArray(descriptionArray)) {
-        throw new Error("Invalid format"); // If not an array, throw error
-      }
-    } catch (e) {
+      descriptionArray = JSON.parse(description);
+      if (!Array.isArray(descriptionArray)) throw new Error();
+    } catch {
       descriptionArray = description.split("\n").filter(line => line.trim() !== "");
     }
 
     cloudinary.uploader.upload_stream({ folder: "Articles" }, async (error, uploadResult) => {
       if (error) return res.status(500).json({ message: "Cloudinary upload failed", error });
 
+      const privateUrl = convertToPrivateCDN(uploadResult.secure_url);
+
       const newArticle = new article({
         title,
-        description: descriptionArray, // Ensure stored as array
-        imageUrl: uploadResult.secure_url,
+        description: descriptionArray,
+        imageUrl: privateUrl
       });
 
       await newArticle.save();
@@ -125,7 +134,6 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
-    // Ensure description is an array
     let descriptionArray;
     try {
       descriptionArray = JSON.parse(description);
@@ -134,12 +142,9 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
       descriptionArray = description.split("\n").filter(x => x.trim() !== "");
     }
 
-    const updateData = {
-      title,
-      description: descriptionArray
-    };
+    const updateData = { title, description: descriptionArray };
 
-    // If image is uploaded → update Cloudinary
+    // Handle new image
     if (req.file) {
       const uploadResult = await new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream({ folder: "Articles" }, (error, result) => {
@@ -148,7 +153,7 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
         }).end(req.file.buffer);
       });
 
-      updateData.imageUrl = uploadResult.secure_url;
+      updateData.imageUrl = convertToPrivateCDN(uploadResult.secure_url);
     }
 
     const updatedArticle = await article.findByIdAndUpdate(articleId, updateData, { new: true });
@@ -180,7 +185,7 @@ app.get('/api/articles/all', async (req, res) => {
     const total = await article.countDocuments();
 
     const articles = await article.find()
-      .sort({ createdAt: -1 }) // Sort by newest first
+      .sort({ createdAt: -1 })
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 
@@ -202,16 +207,15 @@ app.get('/api/articles/:id', async (req, res) => {
 
 app.delete('/api/articles/:id', async (req, res) => {
   try {
-    const articles = await article.findById(req.params.id);
-    if (!articles) {
+    const articlesData = await article.findById(req.params.id);
+    if (!articlesData) {
       return res.status(404).json({ message: 'Article not found' });
     }
 
-    const imageUrl = articles.imageUrl;
+    const imageUrl = articlesData.imageUrl;
     const publicId = imageUrl.split('/').pop().split('.')[0];
 
     await cloudinary.uploader.destroy(publicId);
-
     await article.findByIdAndDelete(req.params.id);
 
     res.json({ message: 'Article and image deleted successfully' });
@@ -255,7 +259,8 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
           else resolve(result);
         }).end(req.file.buffer);
       });
-      imageUrl = uploadResult.secure_url;
+
+      imageUrl = convertToPrivateCDN(uploadResult.secure_url);
 
       if (existingWebsite && existingWebsite.imageUrl) {
         const oldPublicId = existingWebsite.imageUrl.split('/').pop().split('.')[0];
@@ -305,10 +310,8 @@ app.get('/sitemap.xml', async (req, res) => {
   try {
     const baseUrl = 'https://cassamedicalbali.com';
 
-    // Ambil semua artikel
     const articles = await article.find().sort({ _id: -1 }).lean();
 
-    // Daftar route statis
     const staticRoutes = [
       '',
       'home',
@@ -330,11 +333,9 @@ app.get('/sitemap.xml', async (req, res) => {
       'wound-treatment'
     ];
 
-    // Mulai XML
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
     xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-    // Static routes
     staticRoutes.forEach(route => {
       const loc = route === '' ? `${baseUrl}/` : `${baseUrl}/${route}`;
       xml += `
@@ -345,7 +346,6 @@ app.get('/sitemap.xml', async (req, res) => {
   </url>`;
     });
 
-    // Dynamic article routes
     for (const a of articles) {
       const lastmod = a.updatedAt
         ? new Date(a.updatedAt).toISOString()
