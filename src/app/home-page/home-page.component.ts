@@ -53,6 +53,10 @@ export class HomePageComponent implements AfterViewInit {
       },
 
       breakpoints: {
+        848:{
+          perPage: 2,
+          gap: '1rem',
+        },
         768: {
           perPage: 2,
           gap: '1rem',
@@ -72,6 +76,7 @@ export class HomePageComponent implements AfterViewInit {
       pagination: false,
       arrows: true,
       breakpoints: {
+        848: { perPage: 2 },
         768: { perPage: 2 },
         576: { perPage: 1 },
       },

@@ -167,6 +167,7 @@
 }
 
 
+
 #header .navbar-dropdown {
     border: none !important;
     border-top: 3px solid #2A73B9 !important;
@@ -189,7 +190,7 @@
 }
 
 .header-offcanvas{
-    width: 80% !important;
+    width: 90% !important;
 }
 .divider-vertical {
   width: 1px;
@@ -202,8 +203,15 @@
     display: none !important;
     text-decoration: none !important;
     color: inherit !important;
-    font-size: 10px !important;
+    font-size: 18px !important;
     color: #2A73B9 !important;
+}
+
+.whatsapp-icon{
+    text-decoration: none !important;
+    color: inherit !important;
+    font-size: 22px !important;
+    color: #74C0FC !important;
 }
 
 
@@ -232,7 +240,22 @@
 }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 992px) {
+    #header.header-navbar {
+        height: 100px !important;       /* sesuaikan tinggi */
+    }
+
+    /* Logo juga bisa dikecilkan jika perlu */
+    .navbar-logo {
+        width: 100% !important;
+        height: 80px !important;
+        object-fit: contain !important;
+    }
+
+    .header-offcanvas{
+        width: 80% !important;
+    }
     .header-social{
         display: block !important;
     }
@@ -242,7 +265,7 @@
     .navbar-logo-offcanvas{
         display: block !important;
         width: 50%;
-        height: 50px;
+        height: 80px;
         object-fit: contain;
     }
     .topbar{
@@ -250,6 +273,18 @@
     }
     .divider-vertical{
         display: none !important;
+    }
+    
+    #header .nav-link{
+        font-size: 24px !important;
+    }
+
+    #header .offcanvas-body .nav-link{
+        font-size: 24px !important;
+    }
+
+    #header .dropdown-item{
+        font-size: 24px !important;
     }
     
     #header .navbar-dropdown {
@@ -262,6 +297,46 @@
         background-color: transparent !important;
         color: #2A73B9 !important;
         transition: 0.25s ease;
+    }
+    .whatsapp-icon{
+        font-size: 32px !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+      #header.header-navbar {
+        height: auto !important;
+    }
+
+    .navbar-logo {
+        width: 100% !important;
+        height: 50px !important;
+        object-fit: contain !important;
+    }
+    .header-offcanvas{
+        width: 90% !important;
+    }
+    .navbar-logo-offcanvas{
+        width: 60%;
+        height: 60px;
+        object-fit: contain !important;
+    }
+    .header-social{
+        font-size: 14px !important;
+    }
+    #header .nav-link{
+        font-size: 18px !important;
+    }
+
+    #header .offcanvas-body .nav-link{
+        font-size: 18px !important;
+    }
+
+    #header .dropdown-item{
+        font-size: 18px !important;
+    }
+    .whatsapp-icon{
+        font-size: 26px !important;
     }
     
 }
