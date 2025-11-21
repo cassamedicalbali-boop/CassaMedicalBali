@@ -177,6 +177,7 @@
 .navbar-logo{
    width: 100%;
    height: 50px;
+   object-fit: contain;
 }
 
 .navbar-logo-offcanvas{
@@ -242,6 +243,7 @@
         display: block !important;
         width: 50%;
         height: 50px;
+        object-fit: contain;
     }
     .topbar{
         display: none !important;
@@ -2127,6 +2129,9 @@
 }
 
 @media screen and (max-width:992px) {
+    .navbar-logo{
+        height: 30px;
+    }
     .nav-link{
         font-size: 12px !important;
     }
