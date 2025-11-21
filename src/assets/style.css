@@ -1707,6 +1707,7 @@
     width: 80%;
 }
 
+
 @media screen and (max-width:992px) {
     .about-us-img{
         width: 100%;
@@ -1719,6 +1720,9 @@
 @media screen and (max-width:768px) {
     .about-us-img{
         height: 200px;
+    }
+    .home-about{
+        padding-top: 1.5rem;
     }
 }
 @media screen and (max-width:576px) {
