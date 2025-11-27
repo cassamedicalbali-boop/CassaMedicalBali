@@ -1,99 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <!-- Home -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/home</loc>
-    <priority>0.9</priority>
-  </url>
 
-  <!-- Service Pages -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/service</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/about-us</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/contact</loc>
-    <priority>0.8</priority>
-  </url>
+<url>
+  <loc>https://www.cassamedicalbali.com/#/</loc>
+  <lastmod>2025-11-27T05:08:45+00:00</lastmod>
+</url>
 
-  <!-- Articles -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/article</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Detail Article (dynamic id) -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/detail-article/1</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/detail-article/2</loc>
-    <priority>0.7</priority>
-  </url>
-  <!-- Duplicate more if needed -->
-
-  <!-- Login -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/login</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Packages -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/dengue-package</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/flu-package</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/hangover-package</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/immune-package</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/jetlag-package</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/belly-package</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Medical Services -->
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/doctor-consultation</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/call-service</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/laboratory-testing</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/std-testing</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cassamedicalbali.vercel.app/wound-treatment</loc>
-    <priority>0.7</priority>
-  </url>
 
 </urlset>
