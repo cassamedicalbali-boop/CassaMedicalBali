@@ -36,4 +36,16 @@ export class DenguPackagePage {
 
     window.open(whatsappUrl, '_blank');
   }
+   sendWhatsappMessage3() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for On DENGUE DIAGNOSTIC TEST (DAY 1-3 of FEVER) Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+   sendWhatsappMessage4() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for On DENGUE MONITORING TEST (DAY 4-7 of FEVER) Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
 }
