@@ -25,7 +25,7 @@ export class StdTestingPageComponent {
   }
 
   sendWhatsappMessage1() {
-    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Basic Urine PCR Package. Can you assist me with available time slot, please? Thank you.`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Basic Urine PCR (2 Panthogens) Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');
@@ -43,7 +43,13 @@ export class StdTestingPageComponent {
     window.open(whatsappUrl, '_blank');
   }
   sendWhatsappMessage4() {
-    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Essential Urine PCR Package. Can you assist me with available time slot, please? Thank you.`;
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Essential Urine PCR (6 Panthogens) Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
+  sendWhatsappMessage5() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Primary Urine STD Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
     window.open(whatsappUrl, '_blank');

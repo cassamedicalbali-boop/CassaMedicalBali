@@ -1584,6 +1584,18 @@
     color: #ffffff;
 }
 
+.package-title-blue{
+    font-size: 24px;
+    font-weight: 700;
+    color: #2A73B9;
+}
+.package-title-black{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
 .package-price{
     font-size: 32px;
     font-weight: 700;
@@ -1630,6 +1642,12 @@
     .package-title{
         font-size: 22px;
     }
+    .package-title-blue{
+        font-size: 22px;
+    }
+    .package-title-black{
+        font-size: 18px;
+    }
     .package-price{
         font-size: 28px;
     }
@@ -1650,6 +1668,12 @@
     .package-title{
         font-size: 20px;
     }
+    .package-title-blue{
+        font-size: 20px;
+    }
+    .package-title-black{
+        font-size: 16px;
+    }
     .package-price{
         font-size: 26px;
     }
@@ -1669,6 +1693,14 @@
 @media screen and (max-width: 576px){
     .package-title{
         font-size: 18px;
+        text-align: center;
+    }
+    .package-title-blue{
+        font-size: 18px;
+        text-align: center;
+    }
+    .package-title-black{
+        font-size: 16px;
         text-align: center;
     }
     .package-price{
