@@ -5,15 +5,38 @@
     </h2>
     <div class="row pb-4">
       <div class="col-md-12 text-center">
-        <img src="../../assets/images/about-us.jpg" class="about-us-img" />
+        <img src="../../assets/images/clinic1.jpeg" class="about-us-img" />
       </div>
-      <div class="col-md-12 d-flex justify-content-center">
-        <div class="about-us-section pt-4">
-          <p class="p-des">
+      <div class="row mx-auto about-us-section">
+        <div class="col-12 col-md-6 text-center">
+          <div class="splide" id="about-slider">
+            <div class="splide__track p-4">
+              <div class="splide__list">
+                <div class="splide__slide">
+                  <img src="../../assets/images/clinic2.jpeg" class="about-us-img" />
+                </div>
+                <div class="splide__slide">
+                  <img src="../../assets/images/clinic3.jpeg" class="about-us-img" />
+                </div>
+                <div class="splide__slide">
+                  <img src="../../assets/images/clinic4.jpeg" class="about-us-img" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+        <div class="p-4">
+          <p class="p-des m-0">
             {{ website?.aboutus || "Loading About Us..." }}
           </p>
         </div>
       </div>
+
+
+      </div>
+     
     </div>
   </div>
 

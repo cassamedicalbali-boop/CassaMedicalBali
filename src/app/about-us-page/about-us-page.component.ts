@@ -36,5 +36,20 @@ export class AboutUsPageComponent implements AfterViewInit {
         576: { perPage: 1 },
       },
     }).mount();
+      
+    new Splide('#about-slider', {
+      arrows: false,
+      pagination: true,
+      type: 'loop',
+      rewind: true,
+      perPage: 1,
+      autoplay: true,
+      interval: 4000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+
+
+      
+    }).mount();
   }
 }

@@ -48,7 +48,7 @@ import { WoundTreatmentPageComponent } from './wound-treatment-page/wound-treatm
     CallServicePageComponent,
     LaboratoryTestingPageComponent,
     StdTestingPageComponent,
-    WoundTreatmentPageComponent
+    WoundTreatmentPageComponent,
   ],
   imports: [
     BrowserModule,

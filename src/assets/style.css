@@ -1751,7 +1751,7 @@
 }
 @media screen and (max-width:768px) {
     .about-us-img{
-        height: 200px;
+        height: 250px;
     }
     .home-about{
         padding-top: 1.5rem;
@@ -1759,7 +1759,7 @@
 }
 @media screen and (max-width:576px) {
     .about-us-img{
-        height: 150px;
+        height: 200px;
     }
 }
 
