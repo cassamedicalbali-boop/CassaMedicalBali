@@ -18,6 +18,7 @@ import { CallServicePageComponent } from './call-service-page/call-service-page.
 import { LaboratoryTestingPageComponent } from './laboratory-testing-page/laboratory-testing-page.component';
 import { StdTestingPageComponent } from './std-testing-page/std-testing-page.component';
 import { WoundTreatmentPageComponent } from './wound-treatment-page/wound-treatment-page.component';
+import { LabTestPageComponent } from './lab-test-page/lab-test-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'laboratory-testing', component: LaboratoryTestingPageComponent },
   { path: 'std-testing', component: StdTestingPageComponent },
   { path: 'wound-treatment', component: WoundTreatmentPageComponent },
+  { path: 'lab-test', component: LabTestPageComponent },
 
 ];
 
