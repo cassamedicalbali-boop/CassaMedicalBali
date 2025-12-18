@@ -148,7 +148,7 @@ export class HomePageComponent implements AfterViewInit {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  
+
   sendWhatsappMessageBelly() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Bali Belly Treatment. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
@@ -159,70 +159,77 @@ export class HomePageComponent implements AfterViewInit {
   sendWhatsappMessageHangover() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Hangover Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
-  
+
   sendWhatsappMessageImmune() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Immune Booster. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageJetLag() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Jet Lag Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageDengue() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Dengue Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageFlu() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Flu Package. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageDoctor() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Doctor Consultation. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageCall() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for On Call Service. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageTreatment() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Wound Treatment. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageLaboratory() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Laboratory Testing. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
     window.open(whatsappUrl, '_blank');
   }
 
   sendWhatsappMessageStd() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for STD testing. Can you assist me with available time slot, please? Thank you.`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
-  
+
+    window.open(whatsappUrl, '_blank');
+  }
+
+  sendWhatsappMessageLabTest() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for On Lab Testing Package. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
     window.open(whatsappUrl, '_blank');
   }
 
