@@ -346,7 +346,7 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
 // ---------------- SITEMAP ----------------
 app.get('/sitemap.xml', async (req, res) => {
   try {
-    const baseUrl = 'https://cassamedicalbali.com/#/';
+    const baseUrl = 'https://cassamedicalbali.com/';
 
     const articles = await article.find().sort({ _id: -1 }).lean();
 
