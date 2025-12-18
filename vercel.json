@@ -7,8 +7,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/cassamedicalclinic/**",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/cassamedicalclinic"
+      }
     }
   ],
 
