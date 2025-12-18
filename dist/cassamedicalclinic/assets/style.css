@@ -167,6 +167,7 @@
 }
 
 
+
 #header .navbar-dropdown {
     border: none !important;
     border-top: 3px solid #2A73B9 !important;
@@ -177,6 +178,7 @@
 .navbar-logo{
    width: 100%;
    height: 50px;
+   object-fit: contain;
 }
 
 .navbar-logo-offcanvas{
@@ -188,7 +190,7 @@
 }
 
 .header-offcanvas{
-    width: 80% !important;
+    width: 90% !important;
 }
 .divider-vertical {
   width: 1px;
@@ -201,8 +203,15 @@
     display: none !important;
     text-decoration: none !important;
     color: inherit !important;
-    font-size: 10px !important;
+    font-size: 18px !important;
     color: #2A73B9 !important;
+}
+
+.whatsapp-icon{
+    text-decoration: none !important;
+    color: inherit !important;
+    font-size: 22px !important;
+    color: #74C0FC !important;
 }
 
 
@@ -231,7 +240,22 @@
 }
 
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 992px) {
+    #header.header-navbar {
+        height: 100px !important;       /* sesuaikan tinggi */
+    }
+
+    /* Logo juga bisa dikecilkan jika perlu */
+    .navbar-logo {
+        width: 100% !important;
+        height: 80px !important;
+        object-fit: contain !important;
+    }
+
+    .header-offcanvas{
+        width: 80% !important;
+    }
     .header-social{
         display: block !important;
     }
@@ -241,13 +265,26 @@
     .navbar-logo-offcanvas{
         display: block !important;
         width: 50%;
-        height: 50px;
+        height: 80px;
+        object-fit: contain;
     }
     .topbar{
         display: none !important;
     }
     .divider-vertical{
         display: none !important;
+    }
+    
+    #header .nav-link{
+        font-size: 24px !important;
+    }
+
+    #header .offcanvas-body .nav-link{
+        font-size: 24px !important;
+    }
+
+    #header .dropdown-item{
+        font-size: 24px !important;
     }
     
     #header .navbar-dropdown {
@@ -260,6 +297,46 @@
         background-color: transparent !important;
         color: #2A73B9 !important;
         transition: 0.25s ease;
+    }
+    .whatsapp-icon{
+        font-size: 32px !important;
+    }
+}
+
+@media screen and (max-width:768px) {
+      #header.header-navbar {
+        height: auto !important;
+    }
+
+    .navbar-logo {
+        width: 100% !important;
+        height: 50px !important;
+        object-fit: contain !important;
+    }
+    .header-offcanvas{
+        width: 90% !important;
+    }
+    .navbar-logo-offcanvas{
+        width: 60%;
+        height: 60px;
+        object-fit: contain !important;
+    }
+    .header-social{
+        font-size: 14px !important;
+    }
+    #header .nav-link{
+        font-size: 18px !important;
+    }
+
+    #header .offcanvas-body .nav-link{
+        font-size: 18px !important;
+    }
+
+    #header .dropdown-item{
+        font-size: 18px !important;
+    }
+    .whatsapp-icon{
+        font-size: 26px !important;
     }
     
 }
@@ -447,6 +524,9 @@
     padding: 0.8rem 1.8rem;
     border-radius: 10px;
     border: none !important;
+    font-weight: 600;
+    font-size: 22px;
+    border: 4px solid #ffffff !important;
 }
 
 .btn-carousel:hover{
@@ -476,7 +556,7 @@
     }
     .btn-carousel {
         padding: 0.6rem 1.2rem;
-        font-size: 12px;
+        font-size: 20px;
         border-radius: 8px;
     }
 }
@@ -521,8 +601,9 @@
     }
     .btn-carousel {
         padding: 0.6rem 1.2rem;
-        font-size: 12px;
+        font-size: 20px;
         border-radius: 8px;
+        border: 3px solid #ffffff !important;
     }
     
 }
@@ -545,9 +626,10 @@
         font-size: 12px;
     }
       .btn-carousel {
-        padding: 0.5rem 1.0rem;
-        font-size: 10px;
+        padding: 0.2rem 1.0rem;
+        font-size: 20px;
         border-radius: 6px;
+        border: 2px solid #ffffff !important;
     }
 }
 
@@ -795,9 +877,10 @@
     color: #ffffff !important;
     padding: 0.5rem 1.4rem;
     border-radius: 3rem;
-    font-size: 16px;
+    font-size: 24px;
     border: none;
     transition: 0.25s ease;
+    font-weight: 600;
 }
 
 .btn-book-now:hover {
@@ -848,7 +931,7 @@
         font-size: 15px;
     }
     .btn-book-now {
-        font-size: 15px;
+        font-size: 20px;
         padding: 0.5rem 1.2rem;
     }
 }
@@ -866,7 +949,7 @@
         font-size: 14px;
     }
     .btn-book-now {
-        font-size: 14px;
+        font-size: 20px;
         padding: 0.4rem 1rem;
     }
 }
@@ -884,7 +967,7 @@
         font-size: 13px;
     }
     .btn-book-now {
-        font-size: 13px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -964,9 +1047,10 @@
     color: #ffffff !important;
     padding: 0.5rem 1.4rem;
     border-radius: 3rem;
-    font-size: 16px;
+    font-size: 24px;
     border: none;
     transition: 0.25s ease;
+    font-weight: 600;
 }
 .service-card-btn:hover {
     background-color: #225E2C !important;
@@ -981,7 +1065,7 @@
         font-size: 18px;
     }
     .service-card-btn{
-        font-size: 12px;
+        font-size: 20px;
         padding: 0.5rem 1.2rem;
     }
 }
@@ -995,7 +1079,7 @@
         font-size: 20px;
     }
     .service-card-btn{
-        font-size: 10px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -1009,7 +1093,7 @@
         font-size: 24px;
     }
     .service-card-btn{
-        font-size: 12px;
+        font-size: 20px;
         padding: 0.4rem 0.9rem;
     }
 }
@@ -1500,6 +1584,18 @@
     color: #ffffff;
 }
 
+.package-title-blue{
+    font-size: 24px;
+    font-weight: 700;
+    color: #2A73B9;
+}
+.package-title-black{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
 .package-price{
     font-size: 32px;
     font-weight: 700;
@@ -1519,7 +1615,7 @@
     color: #ffffff;
     border: none !important;
     transition: .25s ease;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -1528,9 +1624,29 @@
     color: #ffffff;
 }
 
+.btn-package-green{
+    background-color: #048B03;
+    color: #ffffff;
+    border: none !important;
+    transition: .25s ease;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn-package-green:hover{
+    background-color: #225E2C;
+    color: #ffffff;
+}
+
 @media screen and (max-width: 992px){
     .package-title{
         font-size: 22px;
+    }
+    .package-title-blue{
+        font-size: 22px;
+    }
+    .package-title-black{
+        font-size: 18px;
     }
     .package-price{
         font-size: 28px;
@@ -1539,7 +1655,11 @@
         font-size: 15px;
     }
     .btn-package{
-        font-size: 18px;
+        font-size: 20px;
+        padding: 0.6rem 1.4rem;
+    }
+    .btn-package-green{
+        font-size: 20px;
         padding: 0.6rem 1.4rem;
     }
 }
@@ -1548,6 +1668,12 @@
     .package-title{
         font-size: 20px;
     }
+    .package-title-blue{
+        font-size: 20px;
+    }
+    .package-title-black{
+        font-size: 16px;
+    }
     .package-price{
         font-size: 26px;
     }
@@ -1555,7 +1681,11 @@
         font-size: 14px;
     }
     .btn-package{
-        font-size: 17px;
+        font-size: 20px;
+        padding: 0.55rem 1.3rem;
+    }
+    .btn-package-green{
+        font-size: 20px;
         padding: 0.55rem 1.3rem;
     }
 }
@@ -1565,6 +1695,14 @@
         font-size: 18px;
         text-align: center;
     }
+    .package-title-blue{
+        font-size: 18px;
+        text-align: center;
+    }
+    .package-title-black{
+        font-size: 16px;
+        text-align: center;
+    }
     .package-price{
         font-size: 22px;
         text-align: center;
@@ -1574,7 +1712,13 @@
         text-align: center;
     }
     .btn-package{
-        font-size: 16px;
+        font-size: 20px;
+        width: 100%;
+        padding: 0.6rem 1.2rem;
+        text-align: center;
+    }
+    .btn-package-green{
+        font-size: 20px;
         width: 100%;
         padding: 0.6rem 1.2rem;
         text-align: center;
@@ -1595,6 +1739,7 @@
     width: 80%;
 }
 
+
 @media screen and (max-width:992px) {
     .about-us-img{
         width: 100%;
@@ -1606,12 +1751,15 @@
 }
 @media screen and (max-width:768px) {
     .about-us-img{
-        height: 200px;
+        height: 250px;
+    }
+    .home-about{
+        padding-top: 1.5rem;
     }
 }
 @media screen and (max-width:576px) {
     .about-us-img{
-        height: 150px;
+        height: 200px;
     }
 }
 
@@ -2092,6 +2240,9 @@
 }
 
 @media screen and (max-width:992px) {
+    .navbar-logo{
+        height: 30px;
+    }
     .nav-link{
         font-size: 12px !important;
     }
