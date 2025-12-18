@@ -1,18 +1,17 @@
 {
   "version": 2,
+
   "builds": [
     {
       "src": "backend/index.js",
       "use": "@vercel/node"
     },
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/cassamedicalclinic"
-      }
+      "src": "dist/cassamedicalclinic/**",
+      "use": "@vercel/static"
     }
   ],
+
   "rewrites": [
     {
       "source": "/api/:path*",
@@ -23,8 +22,8 @@
       "destination": "/backend/index.js"
     },
     {
-      "source": "/:path*",
-      "destination": "/dist/cassamedicalclinic/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
