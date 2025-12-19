@@ -1,4 +1,9 @@
-User-agent: *
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send(
+`User-agent: *
 Allow: /
 
-Sitemap: https://cassamedicalbali.vercel.app/sitemap.xml
+Sitemap: https://cassamedicalbali.com/sitemap.xml`
+  );
+});

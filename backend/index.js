@@ -410,6 +410,17 @@ app.get('/sitemap.xml', async (req, res) => {
   }
 });
 
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send(
+`User-agent: *
+Allow: /
+
+Sitemap: https://cassamedicalbali.com/sitemap.xml`
+  );
+});
+
+
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
