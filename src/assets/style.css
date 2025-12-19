@@ -1110,6 +1110,13 @@
     box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
 }
 
+.clinic-section-img{
+    width: 600px; 
+    height: 400px; 
+    object-fit: cover;
+    box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
+}
+
 .lines-wrapper {
     display: flex;
     align-items: center;
@@ -1137,6 +1144,10 @@
         height: 420px;
         box-shadow: 12px 12px 0 rgba(121, 108, 108, 0.5);
     }
+    .clinic-section-img{
+        height: 420px;
+        box-shadow: 12px 12px 0 rgba(121, 108, 108, 0.5);
+    }
 }
 
 @media screen and (max-width: 1199px) and (min-width: 992px) {
@@ -1144,10 +1155,18 @@
         height: 380px;
         box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
     }
+    .clinic-section-img{
+        height: 380px;
+        box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
+    }
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
     .about-section-img {
+        height: 320px;
+        box-shadow: 8px 8px 0 rgba(121, 108, 108, 0.5);
+    }
+    .clinic-section-img{
         height: 320px;
         box-shadow: 8px 8px 0 rgba(121, 108, 108, 0.5);
     }
@@ -1160,10 +1179,20 @@
         box-shadow: 6px 6px 0 rgba(121, 108, 108, 0.5);
         border-radius: 10px; /* opsional agar lebih halus */
     }
+    .clinic-section-img{
+        width: 100%;
+        height: 260px;
+        box-shadow: 6px 6px 0 rgba(121, 108, 108, 0.5);
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .about-section-img {
+        height: 220px;
+        box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
+    }
+    .clinic-section-img{
         height: 220px;
         box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
     }
