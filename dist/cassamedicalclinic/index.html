@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Primary SEO -->
-    <title>
+    <!-- <title>
       Medical Clinic Bali - 24/7 Bali Belly IV Drip Clinic and Home Service
     </title>
 
@@ -157,10 +157,128 @@
         "@id": "https://www.cassamedicalbali.com/#/std-testing"
       }
     }
+    </script> -->
+
+    <!-- Primary SEO -->
+    <title>
+      Cassa Medical Clinic Bali - 24/7 Bali Belly IV Drip Clinic and Home Service
+    </title>
+
+    <!-- ================= STRUCTURED DATA ================= -->
+
+    <!-- Medical Clinic + Services -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          /* ================= MAIN CLINIC ================= */
+          {
+            "@type": "MedicalClinic",
+            "@id": "https://www.cassamedicalbali.com/#clinic",
+            "name": "Cassa Medical Clinic Bali",
+            "url": "https://www.cassamedicalbali.com/",
+            "logo": "https://www.cassamedicalbali.com/assets/images/logo2.png",
+            "image": "https://www.cassamedicalbali.com/assets/images/logo.png",
+            "telephone": "+62 812-3456-7890",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Berawa, Bali",
+              "addressLocality": "Canggu",
+              "addressRegion": "Bali",
+              "addressCountry": "ID"
+            },
+            "sameAs": [
+              "https://www.instagram.com/cassamedicalclinic",
+              "https://www.facebook.com/cassamedicalclinic"
+            ],
+            "availableService": [
+              {
+                "@type": "MedicalService",
+                "name": "Home Visit Doctor in Bali"
+              },
+              {
+                "@type": "MedicalService",
+                "name": "English-Speaking Doctors Bali"
+              },
+              { "@type": "MedicalService", "name": "IV Bali Belly Treatment" },
+              { "@type": "MedicalService", "name": "IV Dengue Treatment" },
+              { "@type": "MedicalService", "name": "IV Hangover Therapy" },
+              { "@type": "MedicalService", "name": "IV Flu Treatment" },
+              { "@type": "MedicalService", "name": "IV Immune Booster" },
+              { "@type": "MedicalService", "name": "Doctor Consultation" },
+              { "@type": "MedicalService", "name": "STD Testing" }
+            ]
+          },
+
+          /* ================= HOMEPAGE AS ENTITY ================= */
+          {
+            "@type": "WebPage",
+            "@id": "https://www.cassamedicalbali.com/#homepage",
+            "url": "https://www.cassamedicalbali.com/",
+            "name": "Medical Clinic Bali – 24/7 Home Visit & IV Drip Service",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://www.cassamedicalbali.com/#website"
+            },
+            "about": [
+              {
+                "@type": "MedicalService",
+                "name": "Home Visit Doctor in Bali",
+                "provider": {
+                  "@type": "MedicalClinic",
+                  "@id": "https://www.cassamedicalbali.com/#clinic"
+                }
+              },
+              {
+                "@type": "MedicalService",
+                "name": "English-Speaking Doctors Bali",
+                "provider": {
+                  "@type": "MedicalClinic",
+                  "@id": "https://www.cassamedicalbali.com/#clinic"
+                }
+              }
+            ]
+          },
+
+          /* ================= WEBSITE ================= */
+          {
+            "@type": "WebSite",
+            "@id": "https://www.cassamedicalbali.com/#website",
+            "url": "https://www.cassamedicalbali.com/",
+            "name": "Cassa Medical Clinic Bali",
+            "publisher": {
+              "@type": "MedicalClinic",
+              "@id": "https://www.cassamedicalbali.com/#clinic"
+            }
+          },
+
+          /* ================= BREADCRUMB ================= */
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home Visit Doctor in Bali",
+                "item": "https://www.cassamedicalbali.com/#home-visit-doctor-bali"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "English-Speaking Doctors in Bali",
+                "item": "https://www.cassamedicalbali.com/#english-speaking-doctors-bali"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Home",
+                "item": "https://www.cassamedicalbali.com/"
+              }
+            ]
+          }
+        ]
+      }
     </script>
-
-
-
 
     <meta name="description" content="Trusted clinic, expert on IV Drip Bali Belly, Hang Over, Immune Booster, Jetlag, Flu, Dengue Fever, STD Screening, Lab Test, and many more. Mobile Service 24/7. Served by professional with affordable prices">
 
@@ -174,15 +292,22 @@
     <meta name="google-site-verification" content="YUOQZW-XlQSwmBcFfXArY5OoR3BJbtZ6oX2vsm3Y9cE">
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NJ942323');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NJ942323");
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Open Graph (for Facebook, WhatsApp, etc.) -->
-    <meta property="og:title" content="Medical Clinic Bali - 24/7 Bali Belly IV Drip Clinic and Home Service">
+    <meta property="og:title" content="Cassa Medical Clinic Bali - 24/7 Bali Belly IV Drip Clinic and Home Service">
     <meta property="og:description" content="Trusted clinic, expert on IV Drip Bali Belly, Hang Over, Immune Booster, Jetlag, Flu, Dengue Fever, STD Screening, Lab Test, and many more. Mobile Service 24/7. Served by professional with affordable prices">
     <meta property="og:image" content="https://cassamedicalclinic.com/assets/og-image.jpg">
     <meta property="og:url" content="https://cassamedicalclinic.com/">
@@ -201,8 +326,6 @@
     <link rel="icon" sizes="32x32" href="assets/images/logo2.png">
     <link rel="icon" sizes="96x96" href="assets/images/logo2.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo2.png">
-
-
 
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -235,7 +358,7 @@
   <body>
     <app-root></app-root>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ942323" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJ942323" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="gtranslate_wrapper"></div>
     <!-- Scripts -->
@@ -243,5 +366,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="path-to-the-script/splide-extension-grid.min.js"></script>
     <script src="assets/script.js"></script>
-  <script src="runtime.df2db01fd657934e.js" type="module"></script><script src="polyfills.a1332f5d7c3c5985.js" type="module"></script><script src="main.ad5a7adaf76b289f.js" type="module"></script></body>
+  <script src="runtime.df2db01fd657934e.js" type="module"></script><script src="polyfills.a1332f5d7c3c5985.js" type="module"></script><script src="main.7f4ec9e5490f5522.js" type="module"></script></body>
 </html>
