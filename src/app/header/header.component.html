@@ -12,7 +12,7 @@
 
 <nav id="header" class="navbar navbar-expand-lg sticky-top header-navbar shadow shadow-sm" data-bs-spy="scroll" data-bs-target="#navbarOffcanvasLg" *ngIf="website">
     <div class="container">
-    <a class="navbar-brand" routerLink="/" (click)="closeOffcanvas()">
+    <a class="navbar-brand" href="/" (click)="closeOffcanvas()">
       <img [src]="website.imageUrl || '../../assets/images/logo2.png'" alt="CassaMedicalClinic-Logo" class="navbar-logo">
        <!-- <img [src]="'../../assets/images/logo2.png'" alt="CassaMedicalClinic-Logo" class="navbar-logo"> -->
     </a>
@@ -36,32 +36,32 @@
           </div>
           <hr class="divider-offcanvas">
           <ul class="navbar-nav justify-content-center pe-4">
-            <li class="nav-item mx-2"><a class="nav-link" routerLink="/" (click)="closeOffcanvas()">Home</a></li>
-            <li class="nav-item mx-2"><a class="nav-link" routerLink="about-us" (click)="closeOffcanvas()">About Us</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" href="/" (click)="closeOffcanvas()">Home</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" href="about-us" (click)="closeOffcanvas()">About Us</a></li>
             <li class="nav-item mx-2 dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">IV Therapies</a>
                 <ul class="dropdown-menu navbar-dropdown">
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="belly-package" style="color: #2A73B9;">IV Bali Belly Package</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="hangover-package">IV Hangover Package</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="immune-package">IV Immune Booster</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="jetlag-package">IV Jet Lag Package</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="dengue-package">IV Dengue Package</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="flu-package">IV Flu Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="belly-package" style="color: #2A73B9;">IV Bali Belly Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="hangover-package">IV Hangover Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="immune-package">IV Immune Booster</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="jetlag-package">IV Jet Lag Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="dengue-package">IV Dengue Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="flu-package">IV Flu Package</a></li>
                 </ul>
             </li>
             <li class="nav-item mx-2 dropdown">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                 <ul class="dropdown-menu navbar-dropdown">
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="doctor-consultation">Doctor Consultation</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="call-service">On Call Service</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="wound-treatment">Wound Treatment</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="laboratory-testing">Laboratory Testing</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="std-testing">STD Testing</a></li>
-                    <li (click)="closeOffcanvas()"><a class="dropdown-item" routerLink="lab-test">Lab Test Package</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="doctor-consultation">Doctor Consultation</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="call-service">On Call Service</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="wound-treatment">Wound Treatment</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="laboratory-testing">Laboratory Testing</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="std-testing">STD Testing</a></li>
+                    <li (click)="closeOffcanvas()"><a class="dropdown-item" href="lab-test">Lab Test Package</a></li>
                 </ul>
             </li>
-            <li class="nav-item mx-2"><a class="nav-link" routerLink="article" (click)="closeOffcanvas()">Articles</a></li>
-            <li class="nav-item mx-2"><a class="nav-link" routerLink="contact" (click)="closeOffcanvas()">Contact Us</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" href="article" (click)="closeOffcanvas()">Articles</a></li>
+            <li class="nav-item mx-2"><a class="nav-link" href="contact" (click)="closeOffcanvas()">Contact Us</a></li>
             <li class="nav-item divider-vertical mx-2"></li>
             <hr class="divider-offcanvas">
             <li class="nav-item mx-2 pt-1">
