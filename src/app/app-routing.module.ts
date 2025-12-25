@@ -22,21 +22,30 @@ import { LabTestPageComponent } from './lab-test-page/lab-test-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'home', component: HomePageComponent },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
+
   { path: 'service', component: ServicePageComponent },
   { path: 'about-us', component: AboutUsPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'article', component: ArticlePageComponent },
-  { path: 'detail-article', component: DetailArticlePageComponent },
+
   { path: 'detail-article/:id', component: DetailArticlePageComponent },
+
   { path: 'login', component: LoginPageComponent },
-  { path: 'admin', loadChildren: () => import('./admin-page/admin-page.module').then(m => m.AdminPageModule) },
+
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin-page/admin-page.module').then(m => m.AdminPageModule)
+  },
+
   { path: 'dengue-package', component: DenguPackagePage },
   { path: 'flu-package', component: FluPackagePage },
   { path: 'hangover-package', component: HangoverPackagePage },
   { path: 'immune-package', component: ImmunePackagePage },
   { path: 'jetlag-package', component: JetlagPackagePage },
   { path: 'belly-package', component: BellyPackageComponent },
+
   { path: 'doctor-consultation', component: DoctorConsultationPageComponent },
   { path: 'call-service', component: CallServicePageComponent },
   { path: 'laboratory-testing', component: LaboratoryTestingPageComponent },
@@ -44,7 +53,9 @@ const routes: Routes = [
   { path: 'wound-treatment', component: WoundTreatmentPageComponent },
   { path: 'lab-test', component: LabTestPageComponent },
 
+  { path: '**', redirectTo: '' }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

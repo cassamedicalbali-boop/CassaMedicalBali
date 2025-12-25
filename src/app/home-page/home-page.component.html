@@ -1,10 +1,7 @@
 <title>
-Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
+  Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 </title>
-<p class="d-none">
-  <a href="/#home-visit-doctor-bali">Home Visit Doctor in Bali</a> |
-  <a href="/#english-speaking-doctors-bali">English-Speaking Doctors in Bali</a>
-</p>
+
 <body id="body">
   <div class="container-fluid p-0">
     <div class="row g-0">
@@ -26,7 +23,8 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                     villa.
                   </p>
                   <a
-                    href="/#home-visit-doctor-bali"
+                    [routerLink]="['/']"
+                    fragment="home-visit-doctor-bali"
                     class="btn btn-carousel w-75 no-text-decoration"
                     (click)="sendWhatsappMessage()"
                   >
@@ -51,7 +49,8 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                     patients.
                   </p>
                   <a
-                    href="/#english-speaking-doctors-bali"
+                    [routerLink]="['/']"
+                    fragment="english-speaking-doctors-bali"
                     class="btn btn-carousel w-75 no-text-decoration"
                     (click)="sendWhatsappMessageImmune()"
                   >
@@ -76,7 +75,8 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                     STDs, and more.
                   </p>
                   <a
-                    href="/#doctor-consultation"
+                    [routerLink]="['/']"
+                    fragment="english-speaking-doctors-bali"
                     class="btn btn-carousel w-75 no-text-decoration"
                     (click)="sendWhatsappMessageDoctor()"
                   >
@@ -98,13 +98,13 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
   <div class="container-fluid position-relative iv-section mb-4">
     <div class="product-background"></div>
-    <h1 class="text-center p-title-blue pt-4">IV Therapies</h1>
+    <h2 class="text-center p-title-blue pt-4">IV Therapies</h2>
     <!-- background -->
     <div class="container">
       <div class="row g-3 pt-4 pb-4">
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="belly-package" (click)="scrollToTop()"
+            <a [routerLink]="['/belly-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-bali-belly.jpg"
                 class="card-img-top product-card-img"
@@ -112,7 +112,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="belly-package"
+                [routerLink]="['/belly-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Bali Belly Package">
@@ -126,7 +126,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 today!
               </p>
               <a
-                routerLink="belly-package"
+                [routerLink]="['/belly-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -145,7 +145,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="hangover-package" (click)="scrollToTop()"
+            <a [routerLink]="['/hangover-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-hangover.jpg"
                 class="card-img-top product-card-img"
@@ -153,7 +153,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="hangover-package"
+                [routerLink]="['/hangover-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Hangover Package">
@@ -167,7 +167,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 Medical Clinic
               </p>
               <a
-                routerLink="hangover-package"
+                [routerLink]="['/hangover-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -186,7 +186,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="immune-package" (click)="scrollToTop()"
+            <a [routerLink]="['/immune-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-immune-booster.jpg"
                 class="card-img-top product-card-img"
@@ -194,7 +194,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="immune-package"
+                [routerLink]="['/immune-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Immune Booster">
@@ -207,7 +207,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 revitalize you from the inside out.
               </p>
               <a
-                routerLink="immune-package"
+                [routerLink]="['/immune-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -226,7 +226,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="jetlag-package" (click)="scrollToTop()"
+            <a [routerLink]="['/jetlag-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-jet-lag.jpg"
                 class="card-img-top product-card-img"
@@ -234,7 +234,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="jetlag-package"
+                [routerLink]="['/jetlag-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Jet Lag Package">
@@ -247,7 +247,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 flights—so you can fully enjoy your time in Bali.
               </p>
               <a
-                routerLink="jetlag-package"
+                [routerLink]="['/jetlag-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -266,7 +266,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="dengue-package" (click)="scrollToTop()"
+            <a [routerLink]="['/dengue-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-dengue.jpg"
                 class="card-img-top product-card-img"
@@ -274,7 +274,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="dengue-package"
+                [routerLink]="['/dengue-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Dengue Package">
@@ -289,7 +289,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 comfortably.
               </p>
               <a
-                routerLink="dengue-package"
+                [routerLink]="['/dengue-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -308,7 +308,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
 
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
           <div class="product-card card h-100 shadow-sm">
-            <a routerLink="flu-package" (click)="scrollToTop()"
+            <a [routerLink]="['/flu-package']" (click)="scrollToTop()"
               ><img
                 src="../../assets/images/IV Therapies/iv-flu-package.jpg"
                 class="card-img-top product-card-img"
@@ -316,7 +316,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
             /></a>
             <div class="card-body">
               <a
-                routerLink="flu-package"
+                [routerLink]="['/flu-package']"
                 class="no-text-decoration"
                 (click)="scrollToTop()"
                 ><h2 class="card-title product-card-title" id="IV Flu Package">
@@ -330,7 +330,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 paradise.
               </p>
               <a
-                routerLink="flu-package"
+                [routerLink]="['/flu-package']"
                 class="product-arrow no-text-decoration"
                 (click)="scrollToTop()"
               >
@@ -367,10 +367,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="doctor-consultation"
+                      [routerLink]="['/doctor-consultation']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="Doctor Consultation">
+=======
+                      ><h2 class="service-card-title pt-2">
+>>>>>>> Stashed changes
                         Doctor Consultation
                       </h2></a
                     >
@@ -383,7 +387,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="doctor-consultation" (click)="scrollToTop()"
+                    <a [routerLink]="['/doctor-consultation']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/doctor-consultation.jpg"
                         class="service-card-img"
@@ -400,10 +404,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="call-service"
+                      [routerLink]="['/call-service']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="On Call Service">
+=======
+                      ><h2 class="service-card-title pt-2">
+>>>>>>> Stashed changes
                         On Call Service
                       </h2></a
                     >
@@ -416,7 +424,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="call-service" (click)="scrollToTop()"
+                    <a [routerLink]="['/call-service']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/on-call-service.jpg"
                         class="service-card-img"
@@ -433,10 +441,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="wound-treatment"
+                      [routerLink]="['/wound-treatment']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="Wound Treatment">
+=======
+                      ><h2 class="service-card-title pt-2">
+>>>>>>> Stashed changes
                         Wound Treatment
                       </h2></a
                     >
@@ -449,7 +461,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="wound-treatment" (click)="scrollToTop()"
+                    <a [routerLink]="['/wound-treatment']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/wound-treatment.jpg"
                         class="service-card-img"
@@ -466,10 +478,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="laboratory-testing"
+                      [routerLink]="['/laboratory-testing']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="Laboratory Testing">
+=======
+                      ><h2 class="service-card-title pt-2">
+>>>>>>> Stashed changes
                         Laboratory Testing
                       </h2>
                       <a
@@ -482,7 +498,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="laboratory-testing" (click)="scrollToTop()"
+                    <a [routerLink]="['/laboratory-testing']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/laboratory-testing.jpg"
                         class="service-card-img"
@@ -499,10 +515,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="std-testing"
+                      [routerLink]="['/std-testing']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="STD Testing">STD Testing</h2></a
+=======
+                      ><h2 class="service-card-title pt-2">STD Testing</h2></a
+>>>>>>> Stashed changes
                     >
                     <a
                       class="btn service-card-btn mt-2 w-100"
@@ -513,7 +533,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="std-testing" (click)="scrollToTop()"
+                    <a [routerLink]="['/std-testing']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/std-testing.jpg"
                         class="service-card-img"
@@ -530,10 +550,14 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                 <div class="row">
                   <div class="col-8">
                     <a
-                      routerLink="lab-test"
+                      [routerLink]="['/lab-test']"
                       class="no-text-decoration"
                       (click)="scrollToTop()"
+<<<<<<< Updated upstream
                       ><h2 class="service-card-title pt-2" id="Lab Test Package">
+=======
+                      ><h2 class="service-card-title pt-2">
+>>>>>>> Stashed changes
                         Lab Test Package
                       </h2></a
                     >
@@ -546,7 +570,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
                   <div
                     class="col-4 justify-content-center align-content-center"
                   >
-                    <a routerLink="lab-test" (click)="scrollToTop()"
+                    <a [routerLink]="['/lab-test']" (click)="scrollToTop()"
                       ><img
                         src="../../assets/images/lab-test.jpg"
                         class="service-card-img"
@@ -663,7 +687,7 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
       <hr class="mt-4 white-line" />
       <div class="d-flex justify-content-between">
         <div>
-          <a routerLink="article" class="btn btn-read-more-article"
+          <a [routerLink]="['/article']" class="btn btn-read-more-article"
             >Read More Article ></a
           >
         </div>
@@ -684,68 +708,65 @@ Home Visit Doctor in Bali | English-Speaking Doctors – Cassa Medical Clinic
   </div>
 
   <!-- Home Visit Doctor in Bali -->
-    <div
-      id="home-visit-doctor-bali"
-      class="container-fluid pt-5 pb-5"
-    >
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-md-6">
-            <h2 class="p-title-blue">Home Visit Doctor in Bali</h2>
-            <p class="p-des-blue">
-              Need a doctor to come directly to your hotel or villa? Cassa
-              Medical Clinic provides fast and reliable home visit doctor
-              services across Bali. Our licensed doctors are available 24/7 to
-              treat Bali Belly, fever, dehydration, infections, wounds, and more
-              — all from the comfort of your location.
-            </p>
-            <a class="btn btn-book-now mt-3" (click)="sendWhatsappMessage()">
-              Book Home Visit Doctor
-            </a>
-          </div>
+  <div id="home-visit-doctor-bali" class="container-fluid pt-5 pb-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <h2 class="p-title-blue">Home Visit Doctor in Bali</h2>
+          <p class="p-des-blue">
+            Need a doctor to come directly to your hotel or villa? Cassa Medical
+            Clinic provides fast and reliable home visit doctor services across
+            Bali. Our licensed doctors are available 24/7 to treat Bali Belly,
+            fever, dehydration, infections, wounds, and more — all from the
+            comfort of your location.
+          </p>
+          <a class="btn btn-book-now mt-3" (click)="sendWhatsappMessage()">
+            Book Home Visit Doctor
+          </a>
+        </div>
 
-          <div class="col-md-6 text-center">
-            <img
-              src="../../assets/images/clinic4.jpeg"
-              class="clinic-section-img"
-              alt="Home Visit Doctor in Bali"
-            />
-          </div>
+        <div class="col-md-6 text-center">
+          <img
+            src="../../assets/images/clinic4.jpeg"
+            class="clinic-section-img"
+            alt="Home Visit Doctor in Bali"
+          />
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- English-Speaking Doctors in Bali -->
-    <div id="english-speaking-doctors-bali" class="container pt-5 pb-5">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-md-6 text-center">
-            <img
-                src="../../assets/images/clinic2.jpeg"
-                class="clinic-section-img"
-                alt="Home Visit Doctor in Bali"
-              />
-          </div>
-  
-          <div class="col-md-6">
-            <h2 class="p-title-blue">English-Speaking Doctors in Bali</h2>
-            <p class="p-des-blue">
-              Clear communication matters when it comes to your health. Our
-              English-speaking doctors and nurses ensure you fully understand your
-              diagnosis, treatment options, and recovery plan — making us a
-              trusted choice for international patients visiting or living in
-              Bali.
-            </p>
-            <a
-              class="btn btn-book-now mt-3"
-              (click)="sendWhatsappMessageDoctor()"
-            >
-              Consult Our Doctors
-            </a>
-          </div>
+  <!-- English-Speaking Doctors in Bali -->
+  <div id="english-speaking-doctors-bali" class="container pt-5 pb-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6 text-center">
+          <img
+            src="../../assets/images/clinic2.jpeg"
+            class="clinic-section-img"
+            alt="Home Visit Doctor in Bali"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h1 class="p-title-blue">English-Speaking Doctors in Bali</h1>
+          <p class="p-des-blue">
+            Clear communication matters when it comes to your health. Our
+            English-speaking doctors and nurses ensure you fully understand your
+            diagnosis, treatment options, and recovery plan — making us a
+            trusted choice for international patients visiting or living in
+            Bali.
+          </p>
+          <a
+            class="btn btn-book-now mt-3"
+            (click)="sendWhatsappMessageDoctor()"
+          >
+            Consult Our Doctors
+          </a>
         </div>
       </div>
     </div>
+  </div>
 
   <div class="pt-4 pb-4"></div>
 
