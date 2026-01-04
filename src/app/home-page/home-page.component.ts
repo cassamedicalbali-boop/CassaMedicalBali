@@ -76,6 +76,7 @@ export class HomePageComponent implements AfterViewInit {
       pagination: false,
       arrows: true,
       breakpoints: {
+        1024: { perPage: 2 },
         848: { perPage: 2 },
         768: { perPage: 2 },
         576: { perPage: 1 },

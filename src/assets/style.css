@@ -1138,14 +1138,67 @@
     border-radius: 4px;
 }
 
+@media screen and (max-width:1200px) {
+    .about-section-img{
+        height: 320px;
+        box-shadow: 8px 8px 0 rgba(121, 108, 108, 0.5);
+    }
+    .clinic-section-img{
+        max-width: 400px;
+        height: 320px;
+        box-shadow: 8px 8px 0 rgba(121, 108, 108, 0.5);
+    }
+}
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width:992px) {
+    .about-section-img{
+        height: 260px;
+        box-shadow: 6px 6px 0 rgba(121, 108, 108, 0.5);
+    }
+    .clinic-section-img{
+        width: auto;
+        height: 400px;
+        object-fit: cover;
+        box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .about-section-img{
+        height: 220px;
+        box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
+    }
+}
+
+@media screen and (max-width:576px) {
+    .about-section-img{
+        height: 220px;
+        box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
+    }
+    .clinic-section-img{
+        width: 350px;
+        height: 250px;
+        box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
+    }
+}
+
+@media screen and (max-width:320px) {
+    .clinic-section-img{
+        width: 200px;
+        height: 250px;
+        box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
+    }
+}
+
+
+/* @media screen and (min-width: 1200px) {
     .about-section-img {
         height: 420px;
         box-shadow: 12px 12px 0 rgba(121, 108, 108, 0.5);
     }
     .clinic-section-img{
-        height: 420px;
+        max-width: 400px;
+        height: 320px;
         box-shadow: 12px 12px 0 rgba(121, 108, 108, 0.5);
     }
 }
@@ -1156,7 +1209,9 @@
         box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
     }
     .clinic-section-img{
-        height: 380px;
+        width: auto;
+        height: 400px;
+        object-fit: cover;
         box-shadow: 10px 10px 0 rgba(121, 108, 108, 0.5);
     }
 }
@@ -1177,7 +1232,7 @@
         width: 100%;
         height: 260px;
         box-shadow: 6px 6px 0 rgba(121, 108, 108, 0.5);
-        border-radius: 10px; /* opsional agar lebih halus */
+        border-radius: 10px;
     }
     .clinic-section-img{
         width: 100%;
@@ -1196,7 +1251,7 @@
         height: 220px;
         box-shadow: 5px 5px 0 rgba(121, 108, 108, 0.5);
     }
-}
+} */
 
 
 /* ABOUT END */
@@ -1411,6 +1466,42 @@
 
 /* ARTICLE END */
 
+/* PROMO SECTION */
+.promo-section{
+    width: 100%;
+    background-color: #19487E;
+}
+.promo-img{
+    width: auto;
+    height: 700px;
+    object-fit: cover;
+    border: 10px solid #ffffff;
+}
+@media screen and (max-width:992px) {
+    .promo-img{
+        height: 700px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .promo-img{
+        height: 700px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .promo-img{
+        height: 450px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .promo-img{
+        height: 400px;
+    }
+}
+
+/* PROMO SECTION END */
 
 /* TESTIMONIAL SECTION */
 
@@ -1438,6 +1529,16 @@
     font-size: 14px;
 }
 
+.testimonial-pic-card{
+    background: none !important;
+    border: none !important;
+}
+.testimonial-pic{
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+}
+
 @media screen and (max-width:992px) {
     .testimonial-card img{
         width: 70px;
@@ -1448,6 +1549,9 @@
     }
     .testimonial-card-text{
         font-size: 12px;
+    }
+    .testimonial-pic{
+        width: 300px;
     }
 }
 
@@ -1462,6 +1566,9 @@
     .testimonial-card-text{
         font-size: 10px;
     }
+    .testimonial-pic{
+        width: 250px;
+    }
 }
 
 @media screen and (max-width:576px) {
@@ -1474,6 +1581,9 @@
     }
     .testimonial-card-text{
         font-size: 8px;
+    }
+    .testimonial-pic{
+        width: 250px;
     }
 }
 
