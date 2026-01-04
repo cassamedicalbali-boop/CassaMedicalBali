@@ -1470,7 +1470,7 @@
 .promo-section{
     position: relative;
     width: 100%;
-    background-color: #19487E;
+    /* background-color: #19487E; */
 }
 .speaker-background{
     position: absolute;
@@ -1479,12 +1479,12 @@
     width: 70%;
     height: 70%;
 
-    background-image: url('../../assets/images/speaker.png');
+    background-image: url('../../assets/images/speaker-blue.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left;
 
-    opacity: 0.5;
+    /* opacity: 0.5; */
     z-index: 1;
 }
 .promo-background{
@@ -1494,12 +1494,12 @@
     width: 70%;
     height: 70%;
 
-    background-image: url('../../assets/images/promo.png');
+    background-image: url('../../assets/images/promo-blue.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
 
-    opacity: 0.5;
+    /* opacity: 0.5; */
     z-index: 2;
 }
 .speaker-background,
@@ -1508,11 +1508,12 @@
 }
 
 .promo-img{
+    position: relative;
     width: auto;
     height: 700px;
     object-fit: cover;
-    border: 10px solid #ffffff;
-    z-index: 3;
+    border: 10px solid #2A73B9;
+    z-index: 4;
 }
 
 .promo-card-btn{
@@ -1569,7 +1570,7 @@
         height: 40%;
     }
     .promo-background{
-        bottom: 0;
+        bottom: 5%;
         right: 0;
         width: 40%;
         height: 40%;
