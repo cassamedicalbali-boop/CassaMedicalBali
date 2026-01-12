@@ -2,6 +2,7 @@ import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { ArticleService } from '../services/article.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { WebsiteService } from '../services/website.service';
 
 declare var Splide: any;
 declare var bootstrap: any;
@@ -16,15 +17,18 @@ export class DetailArticlePageComponent implements AfterViewInit, OnDestroy {
   relatedArticles: any[] = [];
   article: any = null;
   loading = true;
+  website: any;
 
   private routeSub!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private websiteservice: WebsiteService
   ) {}
 
   ngOnInit(): void {
+    this.fetchWebsite();
     // Subscribe to param changes to reload article when clicking related articles
     this.routeSub = this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
@@ -32,6 +36,12 @@ export class DetailArticlePageComponent implements AfterViewInit, OnDestroy {
         this.loadArticle(id);
         this.load6Articles();
       }
+    });
+  }
+  fetchWebsite(): void {
+    this.websiteservice.getWebsiteData().subscribe((data) => {
+      this.website = data;
+      console.log('Website:', this.website);
     });
   }
 
@@ -158,5 +168,10 @@ export class DetailArticlePageComponent implements AfterViewInit, OnDestroy {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  sendWhatsappMessage() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for medical assistance. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
 
+    window.open(whatsappUrl, '_blank');
+  }
 }

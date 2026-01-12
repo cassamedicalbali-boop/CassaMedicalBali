@@ -23,6 +23,12 @@ export class StdTestingPageComponent {
       console.log('Website:', this.website);
     });
   }
+  sendWhatsappMessage() {
+    const message = `Hello Cassa Medical Clinic, I would like to make an appointment for medical assistance. Can you assist me with available time slot, please? Thank you.`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(this.website.whatsappNumber)}&text=${message}`;
+
+    window.open(whatsappUrl, '_blank');
+  }
 
   sendWhatsappMessage1() {
     const message = `Hello Cassa Medical Clinic, I would like to make an appointment for Basic Urine PCR (2 Panthogens) Package. Can you assist me with available time slot, please? Thank you.`;
