@@ -20,7 +20,7 @@ const routes: Routes = [
             .then(m => m.ArticlesModule)
       },
       {
-        path: 'biodata', 
+        path: 'biodata',
         loadChildren: () => import('./pages/biodata/biodata.module')
         .then(m => m.BiodataModule)
       },

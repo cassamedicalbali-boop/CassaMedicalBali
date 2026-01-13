@@ -24,8 +24,9 @@
       "source": "/sitemap.xml",
       "destination": "/backend/index.js"
     },
+
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
