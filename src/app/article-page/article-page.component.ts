@@ -105,4 +105,9 @@ export class ArticlePageComponent implements OnInit {
     window.open(whatsappUrl, '_blank');
   }
 
+  onImgError(event: Event) {
+    const element = event.target as HTMLImageElement;
+    element.src = 'assets/images/article.jpg';
+  }
+
 }

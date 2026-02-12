@@ -174,4 +174,8 @@ export class DetailArticlePageComponent implements AfterViewInit, OnDestroy {
 
     window.open(whatsappUrl, '_blank');
   }
+  onImgError(event: Event) {
+  const element = event.target as HTMLImageElement;
+  element.src = 'assets/images/article.jpg';
+}
 }

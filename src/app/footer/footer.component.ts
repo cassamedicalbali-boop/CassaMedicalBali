@@ -38,4 +38,9 @@ export class FooterComponent {
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  onImgError(event: Event) {
+  const element = event.target as HTMLImageElement;
+  element.src = 'assets/images/logo2.png';
+}
+
 }

@@ -24,7 +24,7 @@
               <img
                 [src]="article.imageUrl || '../../assets/images/article.jpg'"
                 class="card-img-top rounded-3"
-                alt="Article image"
+                alt="Article image" (error)="onImgError($event)"
               />
             </a>
           </div>
