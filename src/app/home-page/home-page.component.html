@@ -12,7 +12,7 @@
             <div class="splide__slide slide-img">
               <div class="slide-wrapper">
                 <img
-                  src="../../assets/images/carousel1.jpg"
+                  src="../../assets/images/c1.jpeg"
                   alt="Home Visit Doctor in Bali"
                 />
                 <div class="slide-caption">
@@ -38,7 +38,7 @@
             <div class="splide__slide slide-img">
               <div class="slide-wrapper">
                 <img
-                  src="../../assets/images/carousel2.jpg"
+                  src="../../assets/images/c2.jpeg"
                   alt="English-Speaking Doctors in Bali"
                 />
                 <div class="slide-caption">
@@ -64,7 +64,7 @@
             <div class="splide__slide slide-img">
               <div class="slide-wrapper">
                 <img
-                  src="../../assets/images/carousel3.jpg"
+                  src="../../assets/images/c3.jpeg"
                   alt="Doctor Consultation in Bali"
                 />
                 <div class="slide-caption">
@@ -586,129 +586,6 @@
     </div>
   </div>
 
-  <div class="pt-4 pb-4"></div>
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 d-flex justify-content-center align-content-end">
-        <img src="../../assets/images/a1.jpeg" class="about-section-img" />
-      </div>
-      <div
-        class="col-md-6 justify-content-center align-content-center"
-        *ngIf="website"
-      >
-        <div class="ps-2 home-about">
-          <h4 class="p-title-blue">About Cassa Medical Clinic</h4>
-          <div class="lines-wrapper">
-            <div class="blue-line"></div>
-            <div class="green-line"></div>
-          </div>
-          <p class="p-des-blue">
-            {{
-              website.aboutus ||
-                "We are an outpatient clinic located at Jalan Pantai Berawa, Gang Sri Kahyangan, No 11, Badung. We are dedicated to provide quality healthcare that’s convenient and affordable. Our professional medical teams offers both onsite and home services, ensuring you get the care you need wherever you are. We’re committed to delivering excellent service with compassion and expertise — because your health is our priority."
-            }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pt-4 pb-4"></div>
-
-  <div class="container article-box">
-    <div class="row mt-4 mb-4 p-4">
-      <h2 class="p-title-white text-center pb-3">Articles</h2>
-      <div class="splide" id="article-slider">
-        <div class="splide__track p-4">
-          <div class="splide__list">
-            <div
-              class="splide__slide shadow-sm"
-              *ngFor="let article of articles"
-            >
-              <div class="card article-card h-100">
-                <div class="p-2">
-                  <a
-                    [routerLink]="['/detail-article', article._id]"
-                    (click)="scrollToTop()"
-                  >
-                    <!-- <img
-                      [src]="
-                        '../../assets/images/article.jpg'
-                      "
-                      class="card-img-top rounded-3"
-                      alt="..."
-                    /> -->
-                    <img
-                      [src]="
-                        article.imageUrl || '../../assets/images/article.jpg'
-                      "
-                      class="card-img-top rounded-3"
-                      alt="..."
-                    />
-                  </a>
-                </div>
-
-                <div class="card-body p-0 ps-3 pb-3 pe-3">
-                  <a
-                    [routerLink]="['/detail-article', article._id]"
-                    class="no-text-decoration"
-                    (click)="scrollToTop()"
-                  >
-                    <h5 class="text-clamp-2 article-card-title">
-                      {{ article.title }}
-                    </h5>
-                  </a>
-
-                  <p class="article-card-date">
-                    {{ article.date | date : "dd MMMM yyyy" }}
-                  </p>
-
-                  <p
-                    class="text-clamp-3 article-card-des"
-                    [innerHTML]="truncateHTML(article.description, 150)"
-                  ></p>
-
-                  <div class="text-end">
-                    <a
-                      [routerLink]="['/detail-article', article._id]"
-                      class="btn btn-go-to-article"
-                      (click)="scrollToTop()"
-                    >
-                      Go to article
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr class="mt-4 white-line" />
-      <div class="d-flex justify-content-between">
-        <div>
-          <a [routerLink]="['/article']" class="btn btn-read-more-article"
-            >Read More Article ></a
-          >
-        </div>
-        <div>
-          <!-- ARROW HERE -->
-          <div class="d-flex gap-2">
-            <button class="article-arrow" (click)="goPrev()">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-
-            <button class="article-arrow" (click)="goNext()">
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Home Visit Doctor in Bali -->
   <div id="home-visit-doctor-bali" class="container-fluid pt-5 pb-5">
     <div class="container">
@@ -923,6 +800,129 @@
               </div>
             </div>
 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 d-flex justify-content-center align-content-end">
+        <img src="../../assets/images/a1.jpeg" class="about-section-img" />
+      </div>
+      <div
+        class="col-md-6 justify-content-center align-content-center"
+        *ngIf="website"
+      >
+        <div class="ps-2 home-about">
+          <h4 class="p-title-blue">About Cassa Medical Clinic</h4>
+          <div class="lines-wrapper">
+            <div class="blue-line"></div>
+            <div class="green-line"></div>
+          </div>
+          <p class="p-des-blue">
+            {{
+              website.aboutus ||
+                "We are an outpatient clinic located at Jalan Pantai Berawa, Gang Sri Kahyangan, No 11, Badung. We are dedicated to provide quality healthcare that’s convenient and affordable. Our professional medical teams offers both onsite and home services, ensuring you get the care you need wherever you are. We’re committed to delivering excellent service with compassion and expertise — because your health is our priority."
+            }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 pb-4"></div>
+
+  <div class="container article-box">
+    <div class="row mt-4 mb-4 p-4">
+      <h2 class="p-title-white text-center pb-3">Articles</h2>
+      <div class="splide" id="article-slider">
+        <div class="splide__track p-4">
+          <div class="splide__list">
+            <div
+              class="splide__slide shadow-sm"
+              *ngFor="let article of articles"
+            >
+              <div class="card article-card h-100">
+                <div class="p-2">
+                  <a
+                    [routerLink]="['/detail-article', article._id]"
+                    (click)="scrollToTop()"
+                  >
+                    <!-- <img
+                      [src]="
+                        '../../assets/images/article.jpg'
+                      "
+                      class="card-img-top rounded-3"
+                      alt="..."
+                    /> -->
+                    <img
+                      [src]="
+                        article.imageUrl || '../../assets/images/article.jpg'
+                      "
+                      class="card-img-top rounded-3"
+                      alt="..."
+                    />
+                  </a>
+                </div>
+
+                <div class="card-body p-0 ps-3 pb-3 pe-3">
+                  <a
+                    [routerLink]="['/detail-article', article._id]"
+                    class="no-text-decoration"
+                    (click)="scrollToTop()"
+                  >
+                    <h5 class="text-clamp-2 article-card-title">
+                      {{ article.title }}
+                    </h5>
+                  </a>
+
+                  <p class="article-card-date">
+                    {{ article.date | date : "dd MMMM yyyy" }}
+                  </p>
+
+                  <p
+                    class="text-clamp-3 article-card-des"
+                    [innerHTML]="truncateHTML(article.description, 150)"
+                  ></p>
+
+                  <div class="text-end">
+                    <a
+                      [routerLink]="['/detail-article', article._id]"
+                      class="btn btn-go-to-article"
+                      (click)="scrollToTop()"
+                    >
+                      Go to article
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mt-4 white-line" />
+      <div class="d-flex justify-content-between">
+        <div>
+          <a [routerLink]="['/article']" class="btn btn-read-more-article"
+            >Read More Article ></a
+          >
+        </div>
+        <div>
+          <!-- ARROW HERE -->
+          <div class="d-flex gap-2">
+            <button class="article-arrow" (click)="goPrev()">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <button class="article-arrow" (click)="goNext()">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
