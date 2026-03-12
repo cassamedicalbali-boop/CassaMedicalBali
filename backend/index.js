@@ -36,13 +36,13 @@ const { v2: cloudinary } = require("cloudinary");
 
 // Configure Cloudinary
 cloudinary.config({
-  cloud_name: "dccp9q30k",
-  api_key: "225543437123415",
-  api_secret: "L57Lrr4_mfojeg1d5tDujHxtR6k",
+  cloud_name: "dirkrtahc",
+  api_key: "869814956961333",
+  api_secret: "18Nk0G65FlF4SPxxbIEaMlzjVVM",
 });
 
 // PRIVATE CDN BASE URL
-const PRIVATE_CDN_BASE = "https://dccp9q30k-res.cloudinary.com";
+const PRIVATE_CDN_BASE = "https://dirkrtahc-res.cloudinary.com";
 
 // Convert normal Cloudinary URL → Private CDN URL
 function convertToPrivateCdn(url) {
