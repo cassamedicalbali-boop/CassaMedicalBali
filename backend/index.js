@@ -12,7 +12,6 @@ const website = require('./schemas/website')
 
 const storage = multer.memoryStorage();
 
-// LIMIT to 10MB
 const upload = multer({
   storage,
   limits: { fileSize: 10 * 1024 * 1024 }
@@ -34,21 +33,11 @@ mongoose
 
 const { v2: cloudinary } = require("cloudinary");
 
-// Configure Cloudinary
 cloudinary.config({
   cloud_name: "dirkrtahc",
   api_key: "869814956961333",
   api_secret: "18Nk0G65FlF4SPxxbIEaMlzjVVM",
 });
-
-// PRIVATE CDN BASE URL
-const PRIVATE_CDN_BASE = "https://dirkrtahc-res.cloudinary.com";
-
-// Convert normal Cloudinary URL → Private CDN URL
-function convertToPrivateCdn(url) {
-  if (!url) return url;
-  return url.replace("https://res.cloudinary.com", PRIVATE_CDN_BASE);
-}
 
 // ---------------- LOGIN API ----------------
 app.post('/api/login', async (req, res) => {
@@ -89,9 +78,6 @@ app.get('/api/articles', async (req, res) => {
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 
-    // Convert to private CDN
-    articles.forEach(a => a.imageUrl = convertToPrivateCdn(a.imageUrl));
-
     res.json({ articles, total, totalPages: Math.ceil(total / pageSize) });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -107,7 +93,6 @@ app.post("/api/articles", upload.single("image"), async (req, res) => {
       return res.status(400).json({ message: "Image is required" });
     }
 
-    // Ensure description is array
     let descriptionArray;
     try {
       descriptionArray = JSON.parse(description);
@@ -121,12 +106,10 @@ app.post("/api/articles", upload.single("image"), async (req, res) => {
       async (error, uploadResult) => {
         if (error) return res.status(500).json({ message: "Cloudinary upload failed", error });
 
-        const finalUrl = convertToPrivateCdn(uploadResult.secure_url);
-
         const newArticle = new article({
           title,
           description: descriptionArray,
-          imageUrl: finalUrl
+          imageUrl: uploadResult.secure_url
         });
 
         await newArticle.save();
@@ -162,7 +145,6 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
       description: descriptionArray
     };
 
-    // If user uploads new picture
     if (req.file) {
       const uploadResult = await new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream({ folder: "Articles" }, (error, result) => {
@@ -171,7 +153,7 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
         }).end(req.file.buffer);
       });
 
-      updateData.imageUrl = convertToPrivateCdn(uploadResult.secure_url);
+      updateData.imageUrl = uploadResult.secure_url;
     }
 
     const updatedArticle = await article.findByIdAndUpdate(articleId, updateData, { new: true });
@@ -191,7 +173,6 @@ app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
 app.get('/api/articles/latest', async (req, res) => {
   try {
     const articles = await article.find().sort({ _id: -1 }).limit(6);
-    articles.forEach(a => a.imageUrl = convertToPrivateCdn(a.imageUrl));
     res.json(articles);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -210,8 +191,6 @@ app.get('/api/articles/all', async (req, res) => {
       .skip((page - 1) * pageSize)
       .limit(pageSize);
 
-    articles.forEach(a => a.imageUrl = convertToPrivateCdn(a.imageUrl));
-
     res.json({ articles, total, totalPages: Math.ceil(total / pageSize) });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -223,8 +202,6 @@ app.get('/api/articles/:id', async (req, res) => {
   try {
     const singleArticle = await article.findById(req.params.id);
     if (!singleArticle) return res.status(404).json({ message: 'Article not found' });
-
-    singleArticle.imageUrl = convertToPrivateCdn(singleArticle.imageUrl);
 
     res.json(singleArticle);
   } catch (error) {
@@ -243,7 +220,7 @@ app.delete('/api/articles/:id', async (req, res) => {
     const imageUrl = articles.imageUrl;
     const publicId = imageUrl.split('/').pop().split('.')[0];
 
-    await cloudinary.uploader.destroy(publicId);
+    await cloudinary.uploader.destroy(`Articles/${publicId}`);
 
     await article.findByIdAndDelete(req.params.id);
 
@@ -257,11 +234,6 @@ app.delete('/api/articles/:id', async (req, res) => {
 app.get('/api/website', async (req, res) => {
   try {
     const newwebsite = await website.findOne();
-
-    if (newwebsite?.imageUrl) {
-      newwebsite.imageUrl = convertToPrivateCdn(newwebsite.imageUrl);
-    }
-
     res.json(newwebsite);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -287,7 +259,6 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
     let existingWebsite = await website.findOne();
     let imageUrl;
 
-    // Upload image if user changed it
     if (req.file) {
       const uploadResult = await new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream({ folder: "Website" }, (error, result) => {
@@ -296,11 +267,11 @@ app.put('/api/website', upload.single("image"), async (req, res) => {
         }).end(req.file.buffer);
       });
 
-      imageUrl = convertToPrivateCdn(uploadResult.secure_url);
+      imageUrl = uploadResult.secure_url;
 
       if (existingWebsite && existingWebsite.imageUrl) {
         const oldPublicId = existingWebsite.imageUrl.split('/').pop().split('.')[0];
-        await cloudinary.uploader.destroy(oldPublicId);
+        await cloudinary.uploader.destroy(`Website/${oldPublicId}`);
       }
     }
 
@@ -418,7 +389,6 @@ Allow: /
 Sitemap: https://cassamedicalbali.com/sitemap.xml`
   );
 });
-
 
 const PORT = 5000;
 app.listen(PORT, () => {
