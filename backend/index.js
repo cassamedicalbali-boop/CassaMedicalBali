@@ -101,21 +101,25 @@ app.post("/api/articles", upload.single("image"), async (req, res) => {
       descriptionArray = description.split("\n").filter(line => line.trim() !== "");
     }
 
-    cloudinary.uploader.upload_stream(
-      { folder: "Articles" },
-      async (error, uploadResult) => {
-        if (error) return res.status(500).json({ message: "Cloudinary upload failed", error });
+    const uploadResult = await new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        { folder: "Articles" },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      ).end(req.file.buffer);
+    });
 
-        const newArticle = new article({
-          title,
-          description: descriptionArray,
-          imageUrl: uploadResult.secure_url
-        });
+    const newArticle = new article({
+      title,
+      description: descriptionArray,
+      imageUrl: uploadResult.secure_url
+    });
 
-        await newArticle.save();
-        res.status(201).json(newArticle);
-      }
-    ).end(req.file.buffer);
+    await newArticle.save();
+
+    res.status(201).json(newArticle);
 
   } catch (error) {
     res.status(500).json({ message: "Server error", error });
