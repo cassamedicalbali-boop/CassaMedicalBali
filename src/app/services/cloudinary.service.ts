@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CloudinaryService {
 
-  private cloudinaryUrl = 'https://api.cloudinary.com/v1_1/dccp9q30k/image/upload';
-  private uploadPreset = 'Logo';  
+  private cloudinaryUrl = 'https://api.cloudinary.com/v1_1/dirkrtahc/image/upload';
+  private uploadPreset = 'Logo';
 
   constructor(private http: HttpClient) {}
 
