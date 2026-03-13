@@ -11,7 +11,7 @@ const article = require('./schemas/article')
 const website = require('./schemas/website')
 
 const storage = multer.memoryStorage();
-
+const streamifier = require("streamifier");
 const upload = multer({
   storage,
   limits: { fileSize: 10 * 1024 * 1024 }
@@ -87,41 +87,59 @@ app.get('/api/articles', async (req, res) => {
 // ---------------- CREATE ARTICLE ----------------
 app.post("/api/articles", upload.single("image"), async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, date, category } = req.body;
+
+    if (!title || !description) {
+      return res.status(400).json({ message: "Title and description are required" });
+    }
 
     if (!req.file) {
       return res.status(400).json({ message: "Image is required" });
     }
 
+    // Convert description to array
     let descriptionArray;
     try {
       descriptionArray = JSON.parse(description);
       if (!Array.isArray(descriptionArray)) throw new Error();
     } catch {
-      descriptionArray = description.split("\n").filter(line => line.trim() !== "");
+      descriptionArray = description
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line !== "");
     }
 
-    cloudinary.uploader.upload_stream(
-      { folder: "Articles" },
-      async (error, uploadResult) => {
-        if (error) return res.status(500).json({ message: "Cloudinary upload failed", error });
+    // Upload image to Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder: "Articles" },
+        (error, result) => {
+          if (error) return reject(error);
+          resolve(result);
+        }
+      );
 
-        const newArticle = new article({
-          title,
-          description: descriptionArray,
-          imageUrl: uploadResult.secure_url
-        });
+      streamifier.createReadStream(req.file.buffer).pipe(uploadStream);
+    });
 
-        await newArticle.save();
-        res.status(201).json(newArticle);
-      }
-    ).end(req.file.buffer);
+    // Create article
+    const newArticle = new article({
+      title,
+      description: descriptionArray,
+      imageUrl: uploadResult.secure_url,
+      date: date || new Date(), // prevent validation error
+      category: category || ""
+    });
+
+    await newArticle.save();
+
+    res.status(201).json(newArticle);
 
   } catch (error) {
-    res.status(500).json({ message: "Server error", error });
+    console.error("Create Article Error:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 });
-
 // ---------------- UPDATE ARTICLE ----------------
 app.put("/api/articles/:id", upload.single("image"), async (req, res) => {
   try {
